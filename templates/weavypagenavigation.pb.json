@@ -1,0 +1,106 @@
+{
+  "blocks": [
+    {
+      "name": "getApp",
+      "step": {
+        "integration": "1bbbad61-f66b-4cf1-9263-429eedd8c86e",
+        "restapiintegration": {
+          "params": [],
+          "headers": [],
+          "urlBase": "",
+          "urlPath": "/api/apps/{{body.uid}}",
+          "authType": "bearer",
+          "bodyType": "jsonBody",
+          "httpMethod": "GET",
+          "responseType": "auto",
+          "openApiAction": "genericHttpRequest"
+        }
+      }
+    },
+    {
+      "name": "hasMetadata",
+      "conditional": {
+        "if": {
+          "blocks": [
+            {
+              "name": "returnExistingMetadata",
+              "return": {
+                "data": "{{{   page: JSON.parse(atob(getApp.output.metadata.page)) }}}"
+              }
+            }
+          ],
+          "condition": "{{getApp.output.metadata?.page}}"
+        },
+        "else": {
+          "blocks": [
+            {
+              "name": "pageParams",
+              "step": {
+                "javascript": {
+                  "body": "const appId = body.appId || undefined;\nconst route = body.url.currentRoute || undefined;\nconst queryParams = body.url.queryParams || undefined;\n\n// Replace route params with their values\nconst routeParamRegex = /\\/:([^\\/]+)/g;\nconst url = route.replaceAll(routeParamRegex, (m, param) => {\n  return `/${body.url.routeParams[param]}`;\n});\n\n// Remove devMode from query params\ndelete queryParams.devMode;\n\n// Encode it as a base64 string\nconst page = btoa(\n  JSON.stringify({\n    appId: appId,\n    url: url,\n    queryParams: queryParams,\n  }),\n);\nreturn page;\n"
+                },
+                "integration": "javascript"
+              }
+            },
+            {
+              "name": "setApp",
+              "step": {
+                "integration": "1bbbad61-f66b-4cf1-9263-429eedd8c86e",
+                "restapiintegration": {
+                  "body": "{ \"metadata\": { \"page\": \"{{ pageParams.output }}\" } }",
+                  "params": [],
+                  "headers": [],
+                  "urlBase": "",
+                  "urlPath": "/api/apps/{{body.uid}}",
+                  "authType": "bearer",
+                  "bodyType": "jsonBody",
+                  "httpMethod": "PATCH",
+                  "responseType": "auto",
+                  "openApiAction": "genericHttpRequest"
+                }
+              }
+            },
+            {
+              "name": "returnUpdatedMetadata",
+              "return": {
+                "data": "{{{ page: JSON.parse(atob(setApp.output.metadata.page)) }}}"
+              }
+            }
+          ]
+        },
+        "elseIf": []
+      }
+    }
+  ],
+  "trigger": {
+    "workflow": {
+      "options": {
+        "profiles": {
+          "modes": {
+            "editor": {
+              "default": "13770dc2-0258-4786-b9d5-52584cd96ca3",
+              "available": [
+                "4572eb4d-f8e2-4bae-92c6-1eac8bbc03b5",
+                "13770dc2-0258-4786-b9d5-52584cd96ca3"
+              ]
+            },
+            "deployed": {
+              "default": "4572eb4d-f8e2-4bae-92c6-1eac8bbc03b5",
+              "available": [
+                "4572eb4d-f8e2-4bae-92c6-1eac8bbc03b5",
+                "13770dc2-0258-4786-b9d5-52584cd96ca3"
+              ]
+            }
+          }
+        }
+      },
+      "parameters": {
+        "body": {
+          "uid": "",
+          "url": "",
+          "appId": ""
+        }
+      }
+    }
+  }
+}

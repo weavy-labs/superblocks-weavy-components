@@ -1,0 +1,170 @@
+{
+  "top": {
+    "mode": "gridUnit",
+    "value": 0
+  },
+  "apis": {
+    "apiMap": {}
+  },
+  "left": {
+    "mode": "gridUnit",
+    "value": 0
+  },
+  "type": "PAGE_WIDGET",
+  "width": {
+    "mode": "gridUnit",
+    "value": 0
+  },
+  "events": {
+    "eventMap": {
+      "e160aac0-2a80-40bc-865a-482f5b2ff63a": {
+        "id": "e160aac0-2a80-40bc-865a-482f5b2ff63a",
+        "name": "setPageNavigation",
+        "arguments": [
+          {
+            "id": "d74c85ef-f1ed-45dc-9453-f429589e4281",
+            "name": "uid"
+          }
+        ],
+        "onTrigger": [
+          {
+            "id": "x2gz2evlv1",
+            "type": "setStateVar",
+            "state": {
+              "id": "a5465c2f-bdda-45fb-861a-5e3c970a3186",
+              "name": "pageNavigationUid",
+              "scope": "PAGE"
+            },
+            "value": "{{currentEvent.uid}}"
+          },
+          {
+            "id": "ng9cm10hkj",
+            "type": "executeApi",
+            "apiNames": [
+              "SetWeavyNavigation"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "height": {
+    "mode": "gridUnit",
+    "value": 99
+  },
+  "timers": {
+    "timerMap": {}
+  },
+  "version": 8,
+  "children": [
+    {
+      "top": {
+        "mode": "gridUnit",
+        "value": 0
+      },
+      "left": {
+        "mode": "gridUnit",
+        "value": 0
+      },
+      "type": "SECTION_WIDGET",
+      "width": {
+        "mode": "gridUnit",
+        "value": 96
+      },
+      "height": {
+        "mode": "fitContent",
+        "value": 7.833333333333333
+      },
+      "appMode": "EDIT",
+      "children": [
+        {
+          "top": {
+            "mode": "gridUnit",
+            "value": 0
+          },
+          "left": {
+            "mode": "gridUnit",
+            "value": 0
+          },
+          "type": "CANVAS_WIDGET",
+          "width": {
+            "mode": "gridUnit",
+            "value": 96
+          },
+          "height": {
+            "mode": "fitContent",
+            "value": 0
+          },
+          "appMode": "EDIT",
+          "spacing": {
+            "mode": "px",
+            "value": 12
+          },
+          "children": [],
+          "parentId": "k8lvblhjx1",
+          "widgetId": "ngjim0brvh",
+          "canExtend": true,
+          "isLoading": false,
+          "isVisible": true,
+          "widgetName": "Canvas1",
+          "gridColumns": 96,
+          "detachFromLayout": true,
+          "collapseWhenHidden": true,
+          "shouldScrollContents": true
+        }
+      ],
+      "parentId": "0",
+      "widgetId": "k8lvblhjx1",
+      "canExtend": true,
+      "isLoading": false,
+      "isVisible": true,
+      "widgetName": "Section1",
+      "gridColumns": 96,
+      "stackColumnsAt": {
+        "mode": "px",
+        "value": 480
+      },
+      "detachFromLayout": true,
+      "collapseWhenHidden": true
+    }
+  ],
+  "minWidth": {
+    "mode": "px",
+    "value": 300
+  },
+  "widgetId": "0",
+  "canExtend": true,
+  "embedding": {
+    "propertyMap": {},
+    "emittedEvents": {},
+    "triggerableEvents": {}
+  },
+  "stateVars": {
+    "stateVarMap": {
+      "a5465c2f-bdda-45fb-861a-5e3c970a3186": {
+        "id": "a5465c2f-bdda-45fb-861a-5e3c970a3186",
+        "name": "pageNavigationUid",
+        "createdAt": 1732016396164,
+        "persistance": "Temporary",
+        "defaultValue": ""
+      }
+    }
+  },
+  "cachedData": {
+    "pageLoadActions": {
+      "apiDeps": {},
+      "apiNames": []
+    }
+  },
+  "onPageLoad": [
+    {
+      "id": "j9kg9kw886",
+      "type": "optimizedPageLoadApis"
+    }
+  ],
+  "widgetName": "Page1",
+  "gridColumns": 96,
+  "layoutVersion": 6,
+  "detachFromLayout": true,
+  "dynamicBindingPathList": []
+}

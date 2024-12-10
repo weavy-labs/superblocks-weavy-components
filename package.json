@@ -1,0 +1,33 @@
+{
+  "name": "superblocks-weavy-example",
+  "version": "25.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "login": "superblocks login",
+    "create:demo": "npm run init:apis && npm run init:demo-app",
+    "create:template": "npm run init:apis && npm run init:template",
+    "create:components": "npm run init:apis && npm run init:app",
+    "init:apis": "node ./scripts/init-apis.cjs",
+    "init:app": "node ./scripts/init-app.cjs",
+    "init:demo-app": "node ./scripts/create-demo.cjs",
+    "init:template": "node ./scripts/create-template.cjs",
+    "install:components": "node ./scripts/install-components.cjs",
+    "save:templates": "node ./scripts/save-templates.cjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@superblocksteam/cli": "^1.9.0",
+    "chalk": "^4.1.2",
+    "dotenv": "^16.4.7",
+    "inquirer": "^8.2.6",
+    "ora": "^5.4.1",
+    "uuid": "^11.0.3",
+    "yaml": "^2.6.1"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

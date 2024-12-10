@@ -1,0 +1,93 @@
+{
+  "blocks": [
+    {
+      "name": "UpdateUserAndGetToken",
+      "parallel": {
+        "wait": "WAIT_ALL",
+        "static": {
+          "paths": {
+            "user": {
+              "blocks": [
+                {
+                  "name": "UpsertUser",
+                  "step": {
+                    "integration": "1bbbad61-f66b-4cf1-9263-429eedd8c86e",
+                    "restapiintegration": {
+                      "body": "{\n  \"email\" : \"{{ body.user.email }}\",\n  \"name\" : \"{{ body.user.name }}\"\n}",
+                      "params": [],
+                      "headers": [],
+                      "urlBase": "",
+                      "urlPath": "/api/users/{{ body.user.id }}",
+                      "authType": "None",
+                      "bodyType": "jsonBody",
+                      "httpMethod": "PUT",
+                      "responseType": "auto",
+                      "openApiAction": "genericHttpRequest"
+                    }
+                  }
+                }
+              ]
+            },
+            "token": {
+              "blocks": [
+                {
+                  "name": "GetWeavyAccessToken",
+                  "step": {
+                    "integration": "1bbbad61-f66b-4cf1-9263-429eedd8c86e",
+                    "restapiintegration": {
+                      "params": [],
+                      "headers": [],
+                      "urlBase": "",
+                      "urlPath": "/api/users/{{ body.user.id }}/tokens",
+                      "authType": "None",
+                      "bodyType": "jsonBody",
+                      "httpMethod": "POST",
+                      "responseType": "auto",
+                      "openApiAction": "genericHttpRequest"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "poolSize": 20
+      }
+    },
+    {
+      "name": "ReturnTokenData",
+      "return": {
+        "data": "{{ UpdateUserAndGetToken.output.token }}"
+      }
+    }
+  ],
+  "trigger": {
+    "workflow": {
+      "options": {
+        "profiles": {
+          "modes": {
+            "editor": {
+              "default": "13770dc2-0258-4786-b9d5-52584cd96ca3",
+              "available": [
+                "4572eb4d-f8e2-4bae-92c6-1eac8bbc03b5",
+                "13770dc2-0258-4786-b9d5-52584cd96ca3"
+              ]
+            },
+            "deployed": {
+              "default": "4572eb4d-f8e2-4bae-92c6-1eac8bbc03b5",
+              "available": [
+                "4572eb4d-f8e2-4bae-92c6-1eac8bbc03b5",
+                "13770dc2-0258-4786-b9d5-52584cd96ca3"
+              ]
+            }
+          }
+        }
+      },
+      "parameters": {
+        "body": {
+          "user": ""
+        }
+      }
+    }
+  }
+}

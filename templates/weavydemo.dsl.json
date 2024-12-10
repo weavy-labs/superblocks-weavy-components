@@ -1,0 +1,2234 @@
+{
+  "top": {
+    "mode": "gridUnit",
+    "value": 0
+  },
+  "apis": {
+    "apiMap": {}
+  },
+  "left": {
+    "mode": "gridUnit",
+    "value": 0
+  },
+  "type": "PAGE_WIDGET",
+  "width": {
+    "mode": "gridUnit",
+    "value": 0
+  },
+  "events": {
+    "eventMap": {
+      "e160aac0-2a80-40bc-865a-482f5b2ff63a": {
+        "id": "e160aac0-2a80-40bc-865a-482f5b2ff63a",
+        "name": "setPageNavigation",
+        "arguments": [
+          {
+            "id": "d74c85ef-f1ed-45dc-9453-f429589e4281",
+            "name": "uid"
+          }
+        ],
+        "onTrigger": [
+          {
+            "id": "x2gz2evlv1",
+            "type": "setStateVar",
+            "state": {
+              "id": "a5465c2f-bdda-45fb-861a-5e3c970a3186",
+              "name": "pageNavigationUid",
+              "scope": "PAGE"
+            },
+            "value": "{{currentEvent.uid}}"
+          },
+          {
+            "id": "ng9cm10hkj",
+            "type": "executeApi",
+            "apiNames": [
+              "SetWeavyNavigation"
+            ]
+          },
+          {
+            "id": "dvgxpevtrz",
+            "type": "showAlert",
+            "message": "Nav set {{currentEvent.uid}}",
+            "alertDuration": "4"
+          }
+        ]
+      }
+    }
+  },
+  "height": {
+    "mode": "gridUnit",
+    "value": 99
+  },
+  "timers": {
+    "timerMap": {}
+  },
+  "version": 8,
+  "children": [
+    {
+      "top": {
+        "mode": "gridUnit",
+        "value": 0
+      },
+      "left": {
+        "mode": "gridUnit",
+        "value": 0
+      },
+      "type": "SECTION_WIDGET",
+      "width": {
+        "mode": "gridUnit",
+        "value": 96
+      },
+      "height": {
+        "mode": "fitContent",
+        "value": 5.333333333333333
+      },
+      "appMode": "EDIT",
+      "children": [
+        {
+          "top": {
+            "mode": "gridUnit",
+            "value": 0
+          },
+          "left": {
+            "mode": "gridUnit",
+            "value": 0
+          },
+          "type": "CANVAS_WIDGET",
+          "width": {
+            "mode": "gridUnit",
+            "value": 48
+          },
+          "height": {
+            "mode": "fitContent",
+            "value": 1.4999999999999991
+          },
+          "layout": "HSTACK",
+          "appMode": "EDIT",
+          "spacing": {
+            "mode": "px",
+            "value": 12
+          },
+          "children": [
+            {
+              "top": {
+                "mode": "gridUnit",
+                "value": 0
+              },
+              "icon": "{{ icons.interests }}",
+              "left": {
+                "mode": "gridUnit",
+                "value": 0
+              },
+              "text": "Acme Corp",
+              "type": "TEXT_WIDGET",
+              "width": {
+                "mode": "fillParent",
+                "value": 17
+              },
+              "height": {
+                "mode": "fillParent",
+                "value": 1
+              },
+              "appMode": "EDIT",
+              "parentId": "1jhuno1fng",
+              "textType": "text",
+              "widgetId": "eb6qnb0qjx",
+              "isLoading": false,
+              "isVisible": true,
+              "textAlign": "LEFT",
+              "textColor": "{{ theme.colors.contrastText }}",
+              "textProps": {
+                "textStyle": {
+                  "variant": "heading2",
+                  "textColor": {
+                    "default": "{{ theme.colors.contrastText }}"
+                  }
+                }
+              },
+              "textStyle": "LABEL",
+              "widgetName": "Text2",
+              "gridColumns": 17,
+              "verticalAlign": "AUTO",
+              "animateLoading": true,
+              "collapseWhenHidden": true,
+              "dynamicBindingPathList": [
+                {
+                  "key": "textColor"
+                },
+                {
+                  "key": "textProps.textStyle.textColor.default"
+                },
+                {
+                  "key": "icon"
+                }
+              ],
+              "dynamicTriggerPathList": []
+            }
+          ],
+          "parentId": "qk9drqbs0u",
+          "widgetId": "1jhuno1fng",
+          "alignment": "LEFT",
+          "canExtend": true,
+          "isLoading": false,
+          "isVisible": true,
+          "widgetName": "Canvas2",
+          "gridColumns": 48,
+          "distribution": "CENTER",
+          "detachFromLayout": true,
+          "collapseWhenHidden": true,
+          "shouldScrollContents": true,
+          "dynamicBindingPathList": [],
+          "dynamicTriggerPathList": []
+        },
+        {
+          "top": {
+            "mode": "gridUnit",
+            "value": 0
+          },
+          "left": {
+            "mode": "gridUnit",
+            "value": 0
+          },
+          "type": "CANVAS_WIDGET",
+          "width": {
+            "mode": "gridUnit",
+            "value": 48
+          },
+          "height": {
+            "mode": "fitContent",
+            "value": 5.333333333333333
+          },
+          "layout": "HSTACK",
+          "appMode": "EDIT",
+          "padding": {
+            "top": {
+              "mode": "px",
+              "value": 0
+            },
+            "left": {
+              "mode": "px",
+              "value": 0
+            },
+            "right": {
+              "mode": "px",
+              "value": 0
+            },
+            "bottom": {
+              "mode": "px",
+              "value": 0
+            }
+          },
+          "spacing": {
+            "mode": "px",
+            "value": 12
+          },
+          "children": [
+            {
+              "top": {
+                "mode": "gridUnit",
+                "value": 4
+              },
+              "left": {
+                "mode": "gridUnit",
+                "value": 0
+              },
+              "rows": 10,
+              "type": "CUSTOM_WIDGET:20f3a396-2aaf-41f9-bd45-649335ca399e",
+              "width": {
+                "mode": "px",
+                "value": 36
+              },
+              "height": {
+                "mode": "gridUnit",
+                "value": 3
+              },
+              "appMode": "EDIT",
+              "columns": 10,
+              "parentId": "asjxj37u1p",
+              "widgetId": "gmbtwppytg",
+              "isLoading": false,
+              "isVisible": true,
+              "onNavigate": [
+                {
+                  "id": "dfg3q9ou0u",
+                  "code": "let { url, appId, queryParams } = WeavyNotificationEvents1.navigateData;\nlet target = \"SAME_WINDOW\";\n\nif (appId !== Global.app.id) {\n  url = new URL(\n    \".\" + url,\n    `https://${Global.URL.host}/applications/${appId}/`,\n  ).toString();\n  target = \"NEW_WINDOW\";\n}\n\nnavigateTo(url, queryParams, target);\n",
+                  "type": "runJs",
+                  "routeId": "ahjjxoy521",
+                  "routePathDescriptor": "/"
+                }
+              ],
+              "widgetName": "WeavyNotificationEvents1",
+              "gridColumns": 3,
+              "default_theme": "{{theme}}",
+              "onNotification": [
+                {
+                  "id": "mh89na3m3k",
+                  "type": "showAlert",
+                  "style": "info",
+                  "message": "{{WeavyNotificationEvents1.notificationTitle}}",
+                  "alertDuration": "4",
+                  "alertPosition": "topRight"
+                }
+              ],
+              "onTokenExpired": [
+                {
+                  "id": "m59k5leixk",
+                  "type": "executeApi",
+                  "apiNames": [
+                    "GetWeavyToken"
+                  ]
+                }
+              ],
+              "onShowMessenger": [
+                {
+                  "id": "a0uar5leyy",
+                  "name": "MessengerSlideout",
+                  "type": "controlSlideout"
+                }
+              ],
+              "default_weavyUrl": "{{App.WEAVY_URL.value}}",
+              "collapseWhenHidden": true,
+              "default_accessToken": "{{GetWeavyToken.response?.access_token}}",
+              "default_showLoading": true,
+              "default_weavyOptions": "{{{}}}",
+              "default_forceDarkMode": false,
+              "dynamicBindingPathList": [
+                {
+                  "key": "default_weavyUrl"
+                },
+                {
+                  "key": "default_accessToken"
+                },
+                {
+                  "key": "default_theme"
+                },
+                {
+                  "key": "default_weavyOptions"
+                }
+              ],
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onNotification"
+                },
+                {
+                  "key": "onNavigate"
+                },
+                {
+                  "key": "onTokenExpired"
+                },
+                {
+                  "key": "onShowMessenger"
+                }
+              ]
+            },
+            {
+              "top": {
+                "mode": "gridUnit",
+                "value": 0
+              },
+              "icon": "{{ icons.notifications }}",
+              "left": {
+                "mode": "gridUnit",
+                "value": 0
+              },
+              "text": "{{ WeavyNotificationEvents1.notificationCount || ''}}",
+              "type": "BUTTON_WIDGET",
+              "width": {
+                "mode": "fitContent",
+                "value": 12
+              },
+              "height": {
+                "mode": "fitContent",
+                "value": 3.3333333333333335
+              },
+              "appMode": "EDIT",
+              "docsUrl": "https://docs.superblocks.com/components/button",
+              "onClick": [
+                {
+                  "id": "1wdojfgkh9",
+                  "name": "NotificationsSlideout",
+                  "type": "controlSlideout",
+                  "direction": "open"
+                }
+              ],
+              "padding": {
+                "top": {
+                  "mode": "px",
+                  "value": 9
+                },
+                "left": {
+                  "mode": "px",
+                  "value": 10
+                },
+                "right": {
+                  "mode": "px",
+                  "value": 10
+                },
+                "bottom": {
+                  "mode": "px",
+                  "value": 9
+                }
+              },
+              "minWidth": {
+                "mode": "px",
+                "value": 40
+              },
+              "parentId": "asjxj37u1p",
+              "widgetId": "1wdojfgkh9",
+              "isLoading": false,
+              "isVisible": true,
+              "minHeight": {
+                "mode": "px",
+                "value": 40
+              },
+              "isDisabled": false,
+              "widgetName": "Button2",
+              "buttonStyle": "PRIMARY_BUTTON",
+              "gridColumns": 12,
+              "iconPosition": "LEFT",
+              "animateLoading": true,
+              "collapseWhenHidden": true,
+              "dynamicBindingPathList": [
+                {
+                  "key": "icon"
+                },
+                {
+                  "key": "text"
+                }
+              ],
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onClick"
+                }
+              ],
+              "isDefaultClickDisabled": true
+            },
+            {
+              "top": {
+                "mode": "gridUnit",
+                "value": 0
+              },
+              "icon": "{{ icons.chat }}",
+              "left": {
+                "mode": "gridUnit",
+                "value": 44
+              },
+              "type": "BUTTON_WIDGET",
+              "width": {
+                "mode": "fitContent",
+                "value": 4
+              },
+              "height": {
+                "mode": "fitContent",
+                "value": 3.3333333333333335
+              },
+              "margin": {
+                "top": {
+                  "mode": "px",
+                  "value": 12
+                },
+                "left": {
+                  "mode": "px",
+                  "value": 12
+                },
+                "right": {
+                  "mode": "px",
+                  "value": 12
+                },
+                "bottom": {
+                  "mode": "px",
+                  "value": 12
+                }
+              },
+              "appMode": "EDIT",
+              "docsUrl": "https://docs.superblocks.com/components/button",
+              "onClick": [
+                {
+                  "id": "h7havfcqpe",
+                  "name": "MessengerSlideout",
+                  "type": "controlSlideout",
+                  "direction": "open"
+                }
+              ],
+              "padding": {
+                "top": {
+                  "mode": "px",
+                  "value": 9
+                },
+                "left": {
+                  "mode": "px",
+                  "value": 10
+                },
+                "right": {
+                  "mode": "px",
+                  "value": 10
+                },
+                "bottom": {
+                  "mode": "px",
+                  "value": 9
+                }
+              },
+              "minWidth": {
+                "mode": "px",
+                "value": 40
+              },
+              "parentId": "asjxj37u1p",
+              "widgetId": "h7havfcqpe",
+              "isLoading": false,
+              "isVisible": true,
+              "minHeight": {
+                "mode": "px",
+                "value": 40
+              },
+              "isDisabled": false,
+              "widgetName": "Button1",
+              "buttonStyle": "PRIMARY_BUTTON",
+              "gridColumns": 4,
+              "iconPosition": "LEFT",
+              "textAlignment": "CENTER",
+              "animateLoading": true,
+              "collapseWhenHidden": true,
+              "dynamicBindingPathList": [
+                {
+                  "key": "icon"
+                }
+              ],
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onClick"
+                }
+              ],
+              "isDefaultClickDisabled": true
+            }
+          ],
+          "parentId": "qk9drqbs0u",
+          "widgetId": "asjxj37u1p",
+          "alignment": "RIGHT",
+          "canExtend": true,
+          "isLoading": false,
+          "isVisible": true,
+          "widgetName": "Canvas6",
+          "gridColumns": 48,
+          "distribution": "CENTER",
+          "detachFromLayout": true,
+          "collapseWhenHidden": true,
+          "shouldScrollContents": false,
+          "dynamicBindingPathList": [],
+          "dynamicTriggerPathList": []
+        }
+      ],
+      "parentId": "0",
+      "position": "STICKY",
+      "widgetId": "qk9drqbs0u",
+      "canExtend": true,
+      "isLoading": false,
+      "isVisible": true,
+      "widgetName": "Header",
+      "gridColumns": 96,
+      "stickyBehavior": "STACK",
+      "backgroundColor": "{{ theme.colors.primary700 }}",
+      "detachFromLayout": true,
+      "collapseWhenHidden": true,
+      "shouldScrollContents": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "backgroundColor"
+        }
+      ],
+      "dynamicTriggerPathList": []
+    },
+    {
+      "top": {
+        "mode": "gridUnit",
+        "value": 0
+      },
+      "left": {
+        "mode": "gridUnit",
+        "value": 0
+      },
+      "size": "EXTRA_SMALL",
+      "type": "SLIDEOUT_WIDGET",
+      "width": {
+        "mode": "gridUnit",
+        "value": 80
+      },
+      "height": {
+        "mode": "gridUnit",
+        "value": 69
+      },
+      "appMode": "EDIT",
+      "children": [
+        {
+          "top": {
+            "mode": "gridUnit",
+            "value": 0
+          },
+          "left": {
+            "mode": "gridUnit",
+            "value": 0
+          },
+          "type": "SECTION_WIDGET",
+          "width": {
+            "mode": "gridUnit",
+            "value": 1
+          },
+          "height": {
+            "mode": "fitContent",
+            "value": 4.833333333333333
+          },
+          "appMode": "EDIT",
+          "children": [
+            {
+              "top": {
+                "mode": "gridUnit",
+                "value": 0
+              },
+              "left": {
+                "mode": "gridUnit",
+                "value": 0
+              },
+              "type": "CANVAS_WIDGET",
+              "width": {
+                "mode": "gridUnit",
+                "value": 0
+              },
+              "height": {
+                "mode": "fitContent",
+                "value": 69
+              },
+              "appMode": "EDIT",
+              "children": [
+                {
+                  "top": {
+                    "mode": "gridUnit",
+                    "value": 0
+                  },
+                  "left": {
+                    "mode": "gridUnit",
+                    "value": 0
+                  },
+                  "text": "Notifications",
+                  "type": "TEXT_WIDGET",
+                  "width": {
+                    "mode": "gridUnit",
+                    "value": 70
+                  },
+                  "height": {
+                    "mode": "fitContent",
+                    "value": 3
+                  },
+                  "appMode": "EDIT",
+                  "parentId": "ub9uhkptiu",
+                  "textType": "text",
+                  "widgetId": "ry9d24f17x",
+                  "isLoading": false,
+                  "isVisible": true,
+                  "textAlign": "LEFT",
+                  "textProps": {
+                    "textStyle": {
+                      "variant": "heading3"
+                    }
+                  },
+                  "textStyle": "HEADING_1",
+                  "widgetName": "Text3",
+                  "gridColumns": 70,
+                  "verticalAlign": "AUTO",
+                  "animateLoading": true,
+                  "collapseWhenHidden": true,
+                  "dynamicBindingPathList": [],
+                  "dynamicTriggerPathList": []
+                }
+              ],
+              "parentId": "8ubmsbxlkn",
+              "widgetId": "ub9uhkptiu",
+              "canExtend": true,
+              "isLoading": false,
+              "isVisible": true,
+              "isDisabled": false,
+              "widgetName": "Canvas11",
+              "gridColumns": 80,
+              "detachFromLayout": true,
+              "collapseWhenHidden": true,
+              "shouldScrollContents": true
+            }
+          ],
+          "parentId": "iid499mp33",
+          "widgetId": "8ubmsbxlkn",
+          "canExtend": true,
+          "isLoading": false,
+          "isVisible": true,
+          "widgetName": "Section6",
+          "gridColumns": 1,
+          "dragDisabled": true,
+          "detachFromLayout": true,
+          "collapseWhenHidden": true
+        },
+        {
+          "top": {
+            "mode": "gridUnit",
+            "value": 0
+          },
+          "left": {
+            "mode": "gridUnit",
+            "value": 0
+          },
+          "type": "SECTION_WIDGET",
+          "width": {
+            "mode": "gridUnit",
+            "value": 1
+          },
+          "height": {
+            "mode": "fillParent",
+            "value": 1
+          },
+          "appMode": "EDIT",
+          "children": [
+            {
+              "top": {
+                "mode": "gridUnit",
+                "value": 0
+              },
+              "left": {
+                "mode": "gridUnit",
+                "value": 0
+              },
+              "type": "CANVAS_WIDGET",
+              "width": {
+                "mode": "gridUnit",
+                "value": 80
+              },
+              "height": {
+                "mode": "fitContent",
+                "value": 1
+              },
+              "layout": "VSTACK",
+              "appMode": "EDIT",
+              "padding": {
+                "top": {
+                  "mode": "px",
+                  "value": 0
+                },
+                "left": {
+                  "mode": "px",
+                  "value": 0
+                },
+                "right": {
+                  "mode": "px",
+                  "value": 0
+                },
+                "bottom": {
+                  "mode": "px",
+                  "value": 0
+                }
+              },
+              "spacing": {
+                "mode": "px",
+                "value": 12
+              },
+              "children": [
+                {
+                  "top": {
+                    "mode": "gridUnit",
+                    "value": 0
+                  },
+                  "left": {
+                    "mode": "gridUnit",
+                    "value": 3
+                  },
+                  "rows": 30,
+                  "type": "CUSTOM_WIDGET:7ae0214d-3621-4fb1-a468-c4333038340f",
+                  "width": {
+                    "mode": "fillParent",
+                    "value": 50
+                  },
+                  "height": {
+                    "mode": "fillParent",
+                    "value": 1
+                  },
+                  "appMode": "EDIT",
+                  "columns": 50,
+                  "parentId": "umim271e22",
+                  "widgetId": "zexhhlz8ss",
+                  "isLoading": false,
+                  "isVisible": true,
+                  "onNavigate": [
+                    {
+                      "id": "xv35rxatdt",
+                      "code": "let { url, appId, queryParams } = WeavyNotifications1.navigateData;\nlet target = \"SAME_WINDOW\";\n\nif (appId !== Global.app.id) {\n  url = new URL(\n    \".\" + url,\n    `https://${Global.URL.host}/applications/${appId}/`,\n  ).toString();\n  target = \"NEW_WINDOW\";\n}\n\nnavigateTo(url, queryParams, target);\n",
+                      "type": "runJs"
+                    },
+                    {
+                      "id": "sq0pt9n44p",
+                      "name": "NotificationsSlideout",
+                      "type": "controlSlideout",
+                      "direction": "close"
+                    }
+                  ],
+                  "widgetName": "WeavyNotifications1",
+                  "gridColumns": 50,
+                  "default_theme": "{{theme}}",
+                  "onTokenExpired": [
+                    {
+                      "id": "ig67fqfwqf",
+                      "type": "executeApi",
+                      "apiNames": [
+                        "GetWeavyToken"
+                      ]
+                    }
+                  ],
+                  "default_weavyUrl": "{{App.WEAVY_URL.value}}",
+                  "collapseWhenHidden": true,
+                  "default_accessToken": "{{GetWeavyToken.response?.access_token}}",
+                  "default_weavyOptions": "{{{}}}",
+                  "default_forceDarkMode": false,
+                  "dynamicBindingPathList": [
+                    {
+                      "key": "default_accessToken"
+                    },
+                    {
+                      "key": "default_weavyUrl"
+                    },
+                    {
+                      "key": "default_theme"
+                    },
+                    {
+                      "key": "default_weavyOptions"
+                    }
+                  ],
+                  "dynamicTriggerPathList": [
+                    {
+                      "key": "onNavigate"
+                    },
+                    {
+                      "key": "onTokenExpired"
+                    }
+                  ]
+                }
+              ],
+              "parentId": "1h483up9fn",
+              "widgetId": "umim271e22",
+              "alignment": "LEFT",
+              "canExtend": true,
+              "isLoading": false,
+              "isVisible": true,
+              "isDisabled": false,
+              "widgetName": "Canvas12",
+              "gridColumns": 80,
+              "distribution": "TOP",
+              "detachFromLayout": true,
+              "collapseWhenHidden": true,
+              "shouldScrollContents": true,
+              "dynamicBindingPathList": [],
+              "dynamicTriggerPathList": []
+            }
+          ],
+          "parentId": "iid499mp33",
+          "widgetId": "1h483up9fn",
+          "canExtend": true,
+          "isLoading": false,
+          "isVisible": true,
+          "widgetName": "Section7",
+          "gridColumns": 1,
+          "dragDisabled": true,
+          "detachFromLayout": true,
+          "collapseWhenHidden": true,
+          "dynamicBindingPathList": [],
+          "dynamicTriggerPathList": []
+        }
+      ],
+      "parentId": "0",
+      "widgetId": "iid499mp33",
+      "isLoading": false,
+      "widgetName": "NotificationsSlideout",
+      "gridColumns": 80,
+      "hasBackdrop": true,
+      "detachFromLayout": true,
+      "canOutsideClickClose": true,
+      "shouldScrollContents": true,
+      "dynamicBindingPathList": [],
+      "dynamicTriggerPathList": []
+    },
+    {
+      "top": {
+        "mode": "gridUnit",
+        "value": 0
+      },
+      "left": {
+        "mode": "gridUnit",
+        "value": 0
+      },
+      "type": "SECTION_WIDGET",
+      "width": {
+        "mode": "gridUnit",
+        "value": 96
+      },
+      "height": {
+        "mode": "fitContent",
+        "value": 41.833333333333336
+      },
+      "children": [
+        {
+          "top": {
+            "mode": "gridUnit",
+            "value": 0
+          },
+          "left": {
+            "mode": "gridUnit",
+            "value": 0
+          },
+          "type": "CANVAS_WIDGET",
+          "width": {
+            "mode": "gridUnit",
+            "value": 48
+          },
+          "height": {
+            "mode": "fitContent",
+            "value": 40
+          },
+          "layout": "VSTACK",
+          "spacing": {
+            "mode": "px",
+            "value": 12
+          },
+          "children": [
+            {
+              "top": {
+                "mode": "gridUnit",
+                "value": 2
+              },
+              "left": {
+                "mode": "gridUnit",
+                "value": 0
+              },
+              "type": "TABLE_WIDGET",
+              "label": "Data",
+              "width": {
+                "mode": "gridUnit",
+                "value": 24
+              },
+              "height": {
+                "mode": "fitContent",
+                "value": 37
+              },
+              "appMode": "EDIT",
+              "pageType": "NONE",
+              "parentId": "dwpvpsnarl",
+              "textSize": "PARAGRAPH",
+              "widgetId": "szrf0sdur3",
+              "cellProps": {
+                "textStyle": {
+                  "variant": "body2"
+                }
+              },
+              "isLoading": false,
+              "isVisible": true,
+              "tableData": "[\n  {\n    \"name\": \"Billie Eilish\",\n    \"twitter\": \"https://twitter.com/billieeilish\",\n    \"date_joined\": \"2019-01-06\",\n    \"photo\": \"https://lowcode.s3-us-west-2.amazonaws.com/billie_eilish.png\",\n    \"email\": \"bad_guy@gmail.com\",\n    \"action\": \"\"\n  },\n  {\n    \"name\": \"Thom Yorke\",\n    \"twitter\": \"https://twitter.com/thomyorke\",\n    \"date_joined\": \"2019-01-05\",\n    \"photo\": \"https://lowcode.s3-us-west-2.amazonaws.com/thom_yorke.png\",\n    \"email\": \"karma_police_thom@hotmail.com\",\n    \"action\": \"\"\n  },\n  {\n    \"name\": \"Katy Perry\",\n    \"twitter\": \"https://twitter.com/katyperry\",\n    \"date_joined\": \"2019-01-02\",\n    \"photo\": \"https://lowcode.s3-us-west-2.amazonaws.com/katy_perry.png\",\n    \"email\": \"katycat@hotmail.com\",\n    \"action\": \"\"\n  },\n  {\n    \"name\": \"Ryan Gosling\",\n    \"twitter\": \"https://twitter.com/RyanGosling\",\n    \"date_joined\": \"2019-01-03\",\n    \"photo\": \"https://lowcode.s3-us-west-2.amazonaws.com/ryan_gosling.png\",\n    \"email\": \"ryan_the_notebook@gmail.com\",\n    \"action\": \"\"\n  },\n  {\n    \"name\": \"Dua Lipa\",\n    \"twitter\": \"https://twitter.com/DUALIPA\",\n    \"date_joined\": \"2019-01-07\",\n    \"photo\": \"https://lowcode.s3-us-west-2.amazonaws.com/dua_lipa.png\",\n    \"email\": \"dua_levitating@yahoo.com\",\n    \"action\": \"\"\n  },\n  {\n    \"name\": \"Beyonce Knowles\",\n    \"twitter\": \"https://twitter.com/Beyonce\",\n    \"date_joined\": \"2019-01-09\",\n    \"photo\": \"https://lowcode.s3-us-west-2.amazonaws.com/beyonce_knowles.png\",\n    \"email\": \"beyonce_run_the_world@hotmail.com\",\n    \"action\": \"\"\n  },\n  {\n    \"name\": \"Lopez Jennifer\",\n    \"twitter\": \"https://twitter.com/JLo\",\n    \"date_joined\": \"2019-01-04\",\n    \"photo\": \"https://lowcode.s3-us-west-2.amazonaws.com/jennifer_lopez.png\",\n    \"email\": \"jenny_from_the_block@yahoo.com\",\n    \"action\": \"\"\n  }\n]",
+              "widgetName": "Table1",
+              "columnOrder": [
+                "photo",
+                "name",
+                "twitter",
+                "date_joined",
+                "email",
+                "action"
+              ],
+              "compactMode": "SHORT",
+              "gridColumns": 24,
+              "tableHeader": "Users",
+              "isFilterable": true,
+              "isSearchable": true,
+              "onPageChange": [],
+              "onRowClicked": [
+                {
+                  "id": "o0jfb7wmym",
+                  "type": "navigateToRoute",
+                  "routeId": "ahjjxoy521",
+                  "queryParams": "{\"user\":\"{{rowIndex || 0}}\"}",
+                  "routeParams": {
+                    "tab": "{{ Global.URL.routeParams.tab }}",
+                    "userId": "{{ Table1.selectedRowIndex.toString() }}",
+                    "userid": "{{ Table1.selectedRowIndex.toString() }}"
+                  },
+                  "keepQueryParams": true,
+                  "routePathDescriptor": "/"
+                }
+              ],
+              "animateLoading": true,
+              "defaultFilters": "{}",
+              "derivedColumns": {},
+              "isDownloadable": true,
+              "primaryColumns": {
+                "name": {
+                  "id": "name",
+                  "index": 0,
+                  "label": "name",
+                  "width": 150,
+                  "linkUrl": "{{Table1.tableDataWithInserts.map((currentRow) => { return currentRow.name })}}",
+                  "notation": "standard",
+                  "textSize": "PARAGRAPH",
+                  "imageSize": "FIT",
+                  "isDerived": false,
+                  "isVisible": true,
+                  "linkLabel": "{{Table1.tableDataWithInserts.map((currentRow) => { return currentRow.name })}}",
+                  "columnType": "text",
+                  "enableSort": true,
+                  "enableFilter": true,
+                  "openImageUrl": true,
+                  "openInNewTab": true,
+                  "computedValue": "{{Table1.tableDataWithInserts.map((currentRow) => { return currentRow.name })}}",
+                  "tagDisplayConfig": {},
+                  "imageBorderRadius": {
+                    "mode": "px",
+                    "value": 0
+                  },
+                  "verticalAlignment": "CENTER",
+                  "headerIconPosition": "LEFT",
+                  "horizontalAlignment": "LEFT",
+                  "isEditableOnInsertion": true,
+                  "useLabelAsDisplayValue": true
+                },
+                "email": {
+                  "id": "email",
+                  "index": 4,
+                  "label": "email",
+                  "width": 150,
+                  "linkUrl": "{{Table1.tableDataWithInserts.map((currentRow) => { return currentRow.email })}}",
+                  "notation": "standard",
+                  "textSize": "PARAGRAPH",
+                  "imageSize": "FIT",
+                  "isDerived": false,
+                  "isVisible": true,
+                  "linkLabel": "{{Table1.tableDataWithInserts.map((currentRow) => { return currentRow.email })}}",
+                  "columnType": "text",
+                  "enableSort": true,
+                  "enableFilter": true,
+                  "openImageUrl": true,
+                  "openInNewTab": true,
+                  "computedValue": "{{Table1.tableDataWithInserts.map((currentRow) => { return currentRow.email })}}",
+                  "tagDisplayConfig": {},
+                  "imageBorderRadius": {
+                    "mode": "px",
+                    "value": 0
+                  },
+                  "verticalAlignment": "CENTER",
+                  "headerIconPosition": "LEFT",
+                  "horizontalAlignment": "LEFT",
+                  "isEditableOnInsertion": true,
+                  "useLabelAsDisplayValue": true
+                },
+                "photo": {
+                  "id": "photo",
+                  "index": 3,
+                  "label": "photo",
+                  "width": 150,
+                  "linkUrl": "{{Table1.tableDataWithInserts.map((currentRow) => { return currentRow.photo })}}",
+                  "notation": "standard",
+                  "textSize": "PARAGRAPH",
+                  "imageSize": "FIXED",
+                  "isDerived": false,
+                  "isVisible": true,
+                  "linkLabel": "{{Table1.tableDataWithInserts.map((currentRow) => { return currentRow.photo })}}",
+                  "columnType": "image",
+                  "enableSort": true,
+                  "enableFilter": true,
+                  "openImageUrl": true,
+                  "openInNewTab": true,
+                  "computedValue": "{{Table1.tableDataWithInserts.map((currentRow) => { return currentRow.photo })}}",
+                  "tagDisplayConfig": {},
+                  "imageBorderRadius": {
+                    "mode": "%",
+                    "value": 50
+                  },
+                  "verticalAlignment": "CENTER",
+                  "headerIconPosition": "LEFT",
+                  "horizontalAlignment": "LEFT",
+                  "isEditableOnInsertion": true,
+                  "useLabelAsDisplayValue": true
+                },
+                "action": {
+                  "id": "action",
+                  "index": 5,
+                  "label": "action",
+                  "width": 150,
+                  "linkUrl": "{{Table1.tableDataWithInserts.map((currentRow) => { return currentRow.action })}}",
+                  "onClick": [
+                    {
+                      "id": "id0",
+                      "code": "showAlert(currentRow.name + ' is approved!', 'success')",
+                      "type": "runJs",
+                      "newWindow": true
+                    }
+                  ],
+                  "notation": "standard",
+                  "textSize": "PARAGRAPH",
+                  "imageSize": "FIT",
+                  "isDerived": false,
+                  "isVisible": true,
+                  "linkLabel": "{{Table1.tableDataWithInserts.map((currentRow) => { return currentRow.action })}}",
+                  "columnType": "button",
+                  "enableSort": true,
+                  "buttonLabel": "Approve",
+                  "enableFilter": true,
+                  "openImageUrl": true,
+                  "openInNewTab": true,
+                  "computedValue": "{{Table1.tableDataWithInserts.map((currentRow) => { return currentRow.action })}}",
+                  "tagDisplayConfig": {},
+                  "imageBorderRadius": {
+                    "mode": "px",
+                    "value": 0
+                  },
+                  "verticalAlignment": "CENTER",
+                  "headerIconPosition": "LEFT",
+                  "horizontalAlignment": "LEFT",
+                  "isEditableOnInsertion": true,
+                  "useLabelAsDisplayValue": true
+                },
+                "twitter": {
+                  "id": "twitter",
+                  "index": 1,
+                  "label": "twitter",
+                  "width": 150,
+                  "linkUrl": "{{Table1.tableDataWithInserts.map((currentRow) => { return currentRow.twitter })}}",
+                  "notation": "standard",
+                  "textSize": "PARAGRAPH",
+                  "imageSize": "FIT",
+                  "isDerived": false,
+                  "isVisible": true,
+                  "linkLabel": "{{Table1.tableDataWithInserts.map((currentRow) => { return '@' + currentRow.twitter?.split('/').pop()})}}",
+                  "columnType": "link",
+                  "enableSort": true,
+                  "enableFilter": true,
+                  "openImageUrl": true,
+                  "openInNewTab": true,
+                  "computedValue": "{{Table1.tableDataWithInserts.map((currentRow) => { return currentRow.twitter })}}",
+                  "tagDisplayConfig": {},
+                  "imageBorderRadius": {
+                    "mode": "px",
+                    "value": 0
+                  },
+                  "verticalAlignment": "CENTER",
+                  "headerIconPosition": "LEFT",
+                  "horizontalAlignment": "LEFT",
+                  "isEditableOnInsertion": true,
+                  "useLabelAsDisplayValue": true
+                },
+                "date_joined": {
+                  "id": "date_joined",
+                  "index": 2,
+                  "label": "date joined",
+                  "width": 150,
+                  "linkUrl": "{{Table1.tableDataWithInserts.map((currentRow) => { return currentRow.date_joined })}}",
+                  "notation": "standard",
+                  "textSize": "PARAGRAPH",
+                  "imageSize": "FIT",
+                  "isDerived": false,
+                  "isVisible": true,
+                  "linkLabel": "{{Table1.tableDataWithInserts.map((currentRow) => { return currentRow.date_joined })}}",
+                  "columnType": "date",
+                  "enableSort": true,
+                  "inputFormat": "YYYY-MM-DD",
+                  "enableFilter": true,
+                  "openImageUrl": true,
+                  "openInNewTab": true,
+                  "outputFormat": "MM-DD-YYYY",
+                  "computedValue": "{{Table1.tableDataWithInserts.map((currentRow) => { return currentRow.date_joined })}}",
+                  "tagDisplayConfig": {},
+                  "imageBorderRadius": {
+                    "mode": "px",
+                    "value": 0
+                  },
+                  "verticalAlignment": "CENTER",
+                  "headerIconPosition": "LEFT",
+                  "horizontalAlignment": "LEFT",
+                  "isEditableOnInsertion": true,
+                  "useLabelAsDisplayValue": true
+                }
+              },
+              "verticalAlignment": "CENTER",
+              "collapseWhenHidden": true,
+              "defaultSelectedRow": "{{ Global.URL.queryParams.user || 0 }}",
+              "horizontalAlignment": "LEFT",
+              "cachedColumnSettings": {},
+              "dynamicBindingPathList": [
+                {
+                  "key": "primaryColumns.name.linkUrl"
+                },
+                {
+                  "key": "primaryColumns.name.linkLabel"
+                },
+                {
+                  "key": "primaryColumns.name.computedValue"
+                },
+                {
+                  "key": "primaryColumns.name.displayedValue"
+                },
+                {
+                  "key": "primaryColumns.twitter.computedValue"
+                },
+                {
+                  "key": "primaryColumns.twitter.linkUrl"
+                },
+                {
+                  "key": "primaryColumns.twitter.linkLabel"
+                },
+                {
+                  "key": "primaryColumns.date_joined.computedValue"
+                },
+                {
+                  "key": "primaryColumns.date_joined.linkUrl"
+                },
+                {
+                  "key": "primaryColumns.date_joined.linkLabel"
+                },
+                {
+                  "key": "primaryColumns.photo.computedValue"
+                },
+                {
+                  "key": "primaryColumns.photo.linkUrl"
+                },
+                {
+                  "key": "primaryColumns.photo.linkLabel"
+                },
+                {
+                  "key": "primaryColumns.photo.displayedValue"
+                },
+                {
+                  "key": "primaryColumns.email.computedValue"
+                },
+                {
+                  "key": "primaryColumns.email.linkUrl"
+                },
+                {
+                  "key": "primaryColumns.email.linkLabel"
+                },
+                {
+                  "key": "primaryColumns.email.displayedValue"
+                },
+                {
+                  "key": "primaryColumns.action.computedValue"
+                },
+                {
+                  "key": "primaryColumns.action.linkUrl"
+                },
+                {
+                  "key": "primaryColumns.action.linkLabel"
+                },
+                {
+                  "key": "primaryColumns.action.buttonLabel"
+                },
+                {
+                  "key": "primaryColumns.action.displayedValue"
+                },
+                {
+                  "key": "defaultSelectedRow"
+                }
+              ],
+              "dynamicTriggerPathList": [
+                {
+                  "key": "primaryColumns.action.onClick"
+                },
+                {
+                  "key": "onRowClicked"
+                },
+                {
+                  "key": "onPageChange"
+                }
+              ]
+            }
+          ],
+          "parentId": "lm2jrimm2x",
+          "widgetId": "dwpvpsnarl",
+          "alignment": "STRETCH",
+          "canExtend": true,
+          "isLoading": false,
+          "isVisible": true,
+          "minHeight": {
+            "mode": "px",
+            "value": 1292
+          },
+          "widgetName": "Canvas1",
+          "gridColumns": 48,
+          "distribution": "TOP",
+          "dragDisabled": true,
+          "detachFromLayout": true,
+          "collapseWhenHidden": false,
+          "shouldScrollContents": true,
+          "dynamicBindingPathList": [],
+          "dynamicTriggerPathList": []
+        },
+        {
+          "top": {
+            "mode": "gridUnit",
+            "value": 0
+          },
+          "left": {
+            "mode": "gridUnit",
+            "value": 0
+          },
+          "type": "CANVAS_WIDGET",
+          "width": {
+            "mode": "gridUnit",
+            "value": 48
+          },
+          "height": {
+            "mode": "fitContent",
+            "value": 40
+          },
+          "layout": "VSTACK",
+          "appMode": "EDIT",
+          "spacing": {
+            "mode": "px",
+            "value": 12
+          },
+          "children": [
+            {
+              "top": {
+                "mode": "gridUnit",
+                "value": 0
+              },
+              "left": {
+                "mode": "gridUnit",
+                "value": 0
+              },
+              "tabs": [
+                {
+                  "id": "tab2",
+                  "label": "Feed",
+                  "widgetId": "06g6xpnypj"
+                },
+                {
+                  "id": "tab1",
+                  "label": "Chat",
+                  "widgetId": "wrqzvb1cks"
+                },
+                {
+                  "id": "tab7jzz7veaaf",
+                  "label": "Files",
+                  "widgetId": "k2fig53y0y"
+                }
+              ],
+              "type": "TABS_WIDGET",
+              "width": {
+                "mode": "gridUnit",
+                "value": 48
+              },
+              "height": {
+                "mode": "gridUnit",
+                "value": 40
+              },
+              "appMode": "EDIT",
+              "children": [
+                {
+                  "top": {
+                    "mode": "gridUnit",
+                    "value": 0
+                  },
+                  "left": {
+                    "mode": "gridUnit",
+                    "value": 0
+                  },
+                  "type": "CANVAS_WIDGET",
+                  "tabId": "tab2",
+                  "width": {
+                    "mode": "gridUnit",
+                    "value": 48
+                  },
+                  "height": {
+                    "mode": "gridUnit",
+                    "value": 37
+                  },
+                  "layout": "VSTACK",
+                  "appMode": "EDIT",
+                  "padding": {
+                    "top": {
+                      "mode": "px",
+                      "value": 11
+                    },
+                    "left": {
+                      "mode": "px",
+                      "value": 11
+                    },
+                    "right": {
+                      "mode": "px",
+                      "value": 11
+                    },
+                    "bottom": {
+                      "mode": "px",
+                      "value": 11
+                    }
+                  },
+                  "spacing": {
+                    "mode": "px",
+                    "value": 12
+                  },
+                  "tabName": "Tab 2",
+                  "children": [
+                    {
+                      "top": {
+                        "mode": "gridUnit",
+                        "value": 1
+                      },
+                      "left": {
+                        "mode": "gridUnit",
+                        "value": 0
+                      },
+                      "rows": 30,
+                      "type": "CUSTOM_WIDGET:e35a440b-ae8a-4c3b-b171-38f3d849487c",
+                      "width": {
+                        "mode": "fillParent",
+                        "value": 569.5
+                      },
+                      "height": {
+                        "mode": "fillParent",
+                        "value": 1
+                      },
+                      "appMode": "EDIT",
+                      "columns": 50,
+                      "parentId": "06g6xpnypj",
+                      "widgetId": "5v0gowuxw5",
+                      "isLoading": false,
+                      "isVisible": true,
+                      "widgetName": "WeavyPosts1",
+                      "default_uid": "superblocks:users-posts-{{ Table1.selectedRowIndex }}",
+                      "gridColumns": 48,
+                      "default_name": "{{Table1.selectedRow.name}} Feed",
+                      "default_theme": "{{theme}}",
+                      "onTokenExpired": [
+                        {
+                          "id": "pra5xpo3ci",
+                          "type": "executeApi",
+                          "apiNames": [
+                            "GetWeavyToken"
+                          ]
+                        }
+                      ],
+                      "default_weavyUrl": "{{App.WEAVY_URL.value}}",
+                      "collapseWhenHidden": true,
+                      "default_accessToken": "{{GetWeavyToken.response?.access_token}}",
+                      "default_enablePolls": true,
+                      "default_enableEmbeds": true,
+                      "default_weavyOptions": "{{{}}}",
+                      "onSetWeavyNavigation": [
+                        {
+                          "id": "t3se6m71tg",
+                          "code": "",
+                          "type": "triggerEvent",
+                          "event": {
+                            "id": "e160aac0-2a80-40bc-865a-482f5b2ff63a",
+                            "name": "setPageNavigation",
+                            "scope": "PAGE"
+                          },
+                          "apiNames": [],
+                          "targetApp": {
+                            "id": "7a43bde2-e052-4f7c-9c68-1f652298f52a",
+                            "url": "/applications/7a43bde2-e052-4f7c-9c68-1f652298f52a",
+                            "name": "WeavyDemo"
+                          },
+                          "queryParams": "",
+                          "eventPayload": {
+                            "d74c85ef-f1ed-45dc-9453-f429589e4281": "{{WeavyPosts1.uid}}"
+                          }
+                        }
+                      ],
+                      "default_enableComments": true,
+                      "default_enableMentions": true,
+                      "default_enablePreviews": true,
+                      "dynamicBindingPathList": [
+                        {
+                          "key": "default_uid"
+                        },
+                        {
+                          "key": "default_weavyUrl"
+                        },
+                        {
+                          "key": "default_accessToken"
+                        },
+                        {
+                          "key": "default_theme"
+                        },
+                        {
+                          "key": "default_weavyOptions"
+                        },
+                        {
+                          "key": "default_name"
+                        }
+                      ],
+                      "dynamicTriggerPathList": [
+                        {
+                          "key": "onSetWeavyNavigation"
+                        },
+                        {
+                          "key": "onTokenExpired"
+                        }
+                      ],
+                      "default_enableReactions": true,
+                      "dynamicPropertyPathList": [
+                        {
+                          "key": "onSetWeavyNavigation[0].queryParams"
+                        }
+                      ],
+                      "default_enableCloudFiles": true,
+                      "default_enableGoogleMeet": true,
+                      "default_enableAttachments": true,
+                      "default_enableZoomMeetings": true,
+                      "default_enableMicrosoftTeams": true
+                    }
+                  ],
+                  "parentId": "dfq2m87x9d",
+                  "widgetId": "06g6xpnypj",
+                  "alignment": "LEFT",
+                  "isLoading": false,
+                  "widgetName": "Canvas9",
+                  "gridColumns": 48,
+                  "distribution": "TOP",
+                  "parentRowSpace": 1,
+                  "detachFromLayout": true,
+                  "parentColumnSpace": 11.864583333333334,
+                  "dynamicBindingPathList": [],
+                  "dynamicTriggerPathList": []
+                },
+                {
+                  "top": {
+                    "mode": "gridUnit",
+                    "value": 0
+                  },
+                  "left": {
+                    "mode": "gridUnit",
+                    "value": 0
+                  },
+                  "type": "CANVAS_WIDGET",
+                  "tabId": "tab1",
+                  "width": {
+                    "mode": "gridUnit",
+                    "value": 48
+                  },
+                  "height": {
+                    "mode": "gridUnit",
+                    "value": 4
+                  },
+                  "layout": "VSTACK",
+                  "appMode": "EDIT",
+                  "padding": {
+                    "top": {
+                      "mode": "px",
+                      "value": 0
+                    },
+                    "left": {
+                      "mode": "px",
+                      "value": 0
+                    },
+                    "right": {
+                      "mode": "px",
+                      "value": 0
+                    },
+                    "bottom": {
+                      "mode": "px",
+                      "value": 0
+                    }
+                  },
+                  "spacing": {
+                    "mode": "px",
+                    "value": 12
+                  },
+                  "tabName": "Tab 1",
+                  "children": [
+                    {
+                      "top": {
+                        "mode": "gridUnit",
+                        "value": 3
+                      },
+                      "left": {
+                        "mode": "gridUnit",
+                        "value": 0
+                      },
+                      "rows": 30,
+                      "type": "CUSTOM_WIDGET:400d6451-092f-40df-b2d4-7c6328009fda",
+                      "width": {
+                        "mode": "fillParent",
+                        "value": 278.90625
+                      },
+                      "height": {
+                        "mode": "fillParent",
+                        "value": 1
+                      },
+                      "appMode": "EDIT",
+                      "columns": 50,
+                      "parentId": "wrqzvb1cks",
+                      "widgetId": "so399nc800",
+                      "isLoading": false,
+                      "isVisible": true,
+                      "widgetName": "WeavyChat1",
+                      "default_uid": "superblocks:users-chat-{{ Table1.selectedRowIndex }}",
+                      "gridColumns": 25,
+                      "default_name": "{{Table1.selectedRow.name}} Chat",
+                      "default_theme": "{{theme}}",
+                      "onTokenExpired": [
+                        {
+                          "id": "k8o43w8eua",
+                          "type": "executeApi",
+                          "apiNames": [
+                            "GetWeavyToken"
+                          ]
+                        }
+                      ],
+                      "default_weavyUrl": "{{App.WEAVY_URL.value}}",
+                      "collapseWhenHidden": true,
+                      "default_accessToken": "{{GetWeavyToken.response?.access_token}}",
+                      "default_enablePolls": true,
+                      "default_weavyOptions": "{{{}}}",
+                      "onSetWeavyNavigation": [
+                        {
+                          "id": "b909ka508w",
+                          "type": "triggerEvent",
+                          "event": {
+                            "id": "e160aac0-2a80-40bc-865a-482f5b2ff63a",
+                            "name": "setPageNavigation",
+                            "scope": "PAGE"
+                          },
+                          "eventPayload": {
+                            "d74c85ef-f1ed-45dc-9453-f429589e4281": "{{WeavyChat1.uid}}"
+                          }
+                        }
+                      ],
+                      "default_enableMentions": true,
+                      "default_enablePreviews": true,
+                      "dynamicBindingPathList": [
+                        {
+                          "key": "default_uid"
+                        },
+                        {
+                          "key": "default_weavyUrl"
+                        },
+                        {
+                          "key": "default_accessToken"
+                        },
+                        {
+                          "key": "default_weavyOptions"
+                        },
+                        {
+                          "key": "default_theme"
+                        },
+                        {
+                          "key": "default_name"
+                        }
+                      ],
+                      "dynamicTriggerPathList": [
+                        {
+                          "key": "onTokenExpired"
+                        },
+                        {
+                          "key": "onSetWeavyNavigation"
+                        }
+                      ],
+                      "default_enableReactions": true,
+                      "dynamicPropertyPathList": [],
+                      "default_enableCloudFiles": true,
+                      "default_enableGoogleMeet": true,
+                      "default_enableAttachments": true,
+                      "default_enableZoomMeetings": true,
+                      "default_enableNotifications": false,
+                      "default_enableMicrosoftTeams": true
+                    }
+                  ],
+                  "parentId": "dfq2m87x9d",
+                  "widgetId": "wrqzvb1cks",
+                  "alignment": "LEFT",
+                  "isLoading": false,
+                  "widgetName": "Canvas8",
+                  "gridColumns": 48,
+                  "distribution": "TOP",
+                  "parentRowSpace": 1,
+                  "detachFromLayout": true,
+                  "parentColumnSpace": 11.864583333333334,
+                  "dynamicBindingPathList": [],
+                  "dynamicTriggerPathList": []
+                },
+                {
+                  "top": {
+                    "mode": "gridUnit",
+                    "value": 0
+                  },
+                  "left": {
+                    "mode": "gridUnit",
+                    "value": 0
+                  },
+                  "type": "CANVAS_WIDGET",
+                  "tabId": "tab7jzz7veaaf",
+                  "width": {
+                    "mode": "gridUnit",
+                    "value": 48
+                  },
+                  "height": {
+                    "mode": "gridUnit",
+                    "value": 37
+                  },
+                  "layout": "VSTACK",
+                  "appMode": "EDIT",
+                  "padding": {
+                    "top": {
+                      "mode": "px",
+                      "value": 0
+                    },
+                    "left": {
+                      "mode": "px",
+                      "value": 0
+                    },
+                    "right": {
+                      "mode": "px",
+                      "value": 0
+                    },
+                    "bottom": {
+                      "mode": "px",
+                      "value": 0
+                    }
+                  },
+                  "spacing": {
+                    "mode": "px",
+                    "value": 12
+                  },
+                  "tabName": "Tab 1",
+                  "children": [
+                    {
+                      "top": {
+                        "mode": "gridUnit",
+                        "value": 0
+                      },
+                      "left": {
+                        "mode": "gridUnit",
+                        "value": 0
+                      },
+                      "rows": 30,
+                      "type": "CUSTOM_WIDGET:197bbdfa-e12f-4418-a0f2-f97acd3282bd",
+                      "width": {
+                        "mode": "gridUnit",
+                        "value": 48
+                      },
+                      "height": {
+                        "mode": "fillParent",
+                        "value": 1
+                      },
+                      "appMode": "EDIT",
+                      "columns": 50,
+                      "parentId": "k2fig53y0y",
+                      "widgetId": "xuvx3m9zrr",
+                      "isLoading": false,
+                      "isVisible": true,
+                      "widgetName": "WeavyFiles1",
+                      "default_uid": "superblocks:users-files-{{ Table1.selectedRowIndex }}",
+                      "gridColumns": 48,
+                      "default_name": "{{Table1.selectedRow.name}} Files",
+                      "default_theme": "{{theme}}",
+                      "onTokenExpired": [
+                        {
+                          "id": "n5jetqnqcr",
+                          "type": "executeApi",
+                          "apiNames": [
+                            "GetWeavyToken"
+                          ]
+                        }
+                      ],
+                      "default_weavyUrl": "{{App.WEAVY_URL.value}}",
+                      "collapseWhenHidden": true,
+                      "default_accessToken": "{{GetWeavyToken.response?.access_token}}",
+                      "default_enableWebDAV": true,
+                      "default_weavyOptions": "{{{}}}",
+                      "onSetWeavyNavigation": [
+                        {
+                          "id": "a2vy415ia5",
+                          "type": "triggerEvent",
+                          "event": {
+                            "id": "e160aac0-2a80-40bc-865a-482f5b2ff63a",
+                            "name": "setPageNavigation",
+                            "scope": "PAGE"
+                          },
+                          "eventPayload": {
+                            "d74c85ef-f1ed-45dc-9453-f429589e4281": "{{WeavyFiles1.uid}}"
+                          }
+                        }
+                      ],
+                      "default_enableComments": true,
+                      "default_enableMentions": true,
+                      "default_enablePreviews": true,
+                      "default_enableVersions": true,
+                      "dynamicBindingPathList": [
+                        {
+                          "key": "default_uid"
+                        },
+                        {
+                          "key": "default_weavyUrl"
+                        },
+                        {
+                          "key": "default_accessToken"
+                        },
+                        {
+                          "key": "default_theme"
+                        },
+                        {
+                          "key": "default_weavyOptions"
+                        },
+                        {
+                          "key": "default_name"
+                        }
+                      ],
+                      "dynamicTriggerPathList": [
+                        {
+                          "key": "onSetWeavyNavigation"
+                        },
+                        {
+                          "key": "onTokenExpired"
+                        }
+                      ],
+                      "default_enableReactions": true,
+                      "default_enableCloudFiles": true,
+                      "default_enableAttachments": true
+                    }
+                  ],
+                  "parentId": "dfq2m87x9d",
+                  "widgetId": "k2fig53y0y",
+                  "alignment": "STRETCH",
+                  "canExtend": false,
+                  "isLoading": false,
+                  "isVisible": true,
+                  "widgetName": "Canvas10",
+                  "gridColumns": 48,
+                  "distribution": "TOP",
+                  "detachFromLayout": true,
+                  "collapseWhenHidden": true,
+                  "dynamicBindingPathList": [],
+                  "dynamicTriggerPathList": []
+                }
+              ],
+              "parentId": "loaeuyu12k",
+              "widgetId": "dfq2m87x9d",
+              "isLoading": false,
+              "isVisible": true,
+              "defaultTab": "{{ Global.URL.queryParams.tab || \"Feed\" }}",
+              "widgetName": "Tabs1",
+              "gridColumns": 48,
+              "headerProps": {
+                "textStyle": {
+                  "variant": "body1"
+                }
+              },
+              "onTabSelected": [
+                {
+                  "id": "4pyyxg3sz5",
+                  "type": "navigateToRoute",
+                  "routeId": "ahjjxoy521",
+                  "queryParams": "{\"tab\":\"{{ Tabs1.selectedTab }}\"}",
+                  "routeParams": {
+                    "tab": "{{ Tabs1.selectedTab }}",
+                    "userId": "{{ Global.URL.routeParams.userId }}"
+                  },
+                  "keepQueryParams": true,
+                  "routePathDescriptor": "/users/:userId/:tab"
+                }
+              ],
+              "shouldShowTabs": true,
+              "collapseWhenHidden": true,
+              "shouldScrollContents": true,
+              "dynamicBindingPathList": [
+                {
+                  "key": "defaultTab"
+                }
+              ],
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onTabSelected"
+                }
+              ]
+            }
+          ],
+          "parentId": "lm2jrimm2x",
+          "widgetId": "loaeuyu12k",
+          "alignment": "STRETCH",
+          "canExtend": true,
+          "isLoading": false,
+          "isVisible": true,
+          "widgetName": "Canvas5",
+          "gridColumns": 48,
+          "distribution": "TOP",
+          "detachFromLayout": true,
+          "collapseWhenHidden": true,
+          "shouldScrollContents": true,
+          "dynamicBindingPathList": [],
+          "dynamicTriggerPathList": []
+        }
+      ],
+      "parentId": "0",
+      "widgetId": "lm2jrimm2x",
+      "canExtend": true,
+      "isLoading": false,
+      "isVisible": true,
+      "widgetName": "Section1",
+      "gridColumns": 96,
+      "dragDisabled": true,
+      "detachFromLayout": true,
+      "collapseWhenHidden": true,
+      "shouldScrollContents": true,
+      "dynamicBindingPathList": [],
+      "dynamicTriggerPathList": []
+    },
+    {
+      "top": {
+        "mode": "gridUnit",
+        "value": 0
+      },
+      "left": {
+        "mode": "gridUnit",
+        "value": 0
+      },
+      "size": "EXTRA_SMALL",
+      "type": "SLIDEOUT_WIDGET",
+      "width": {
+        "mode": "gridUnit",
+        "value": 80
+      },
+      "height": {
+        "mode": "gridUnit",
+        "value": 69
+      },
+      "appMode": "EDIT",
+      "children": [
+        {
+          "top": {
+            "mode": "gridUnit",
+            "value": 0
+          },
+          "left": {
+            "mode": "gridUnit",
+            "value": 0
+          },
+          "type": "SECTION_WIDGET",
+          "width": {
+            "mode": "gridUnit",
+            "value": 1
+          },
+          "height": {
+            "mode": "fitContent",
+            "value": 4.833333333333333
+          },
+          "appMode": "EDIT",
+          "children": [
+            {
+              "top": {
+                "mode": "gridUnit",
+                "value": 0
+              },
+              "left": {
+                "mode": "gridUnit",
+                "value": 0
+              },
+              "type": "CANVAS_WIDGET",
+              "width": {
+                "mode": "gridUnit",
+                "value": 0
+              },
+              "height": {
+                "mode": "fitContent",
+                "value": 69
+              },
+              "appMode": "EDIT",
+              "children": [
+                {
+                  "top": {
+                    "mode": "gridUnit",
+                    "value": 0
+                  },
+                  "left": {
+                    "mode": "gridUnit",
+                    "value": 0
+                  },
+                  "text": "Messenger",
+                  "type": "TEXT_WIDGET",
+                  "width": {
+                    "mode": "gridUnit",
+                    "value": 70
+                  },
+                  "height": {
+                    "mode": "fitContent",
+                    "value": 3
+                  },
+                  "appMode": "EDIT",
+                  "parentId": "51byx91vbd",
+                  "textType": "text",
+                  "widgetId": "da9zxhgm3k",
+                  "isLoading": false,
+                  "isVisible": true,
+                  "textAlign": "LEFT",
+                  "textProps": {
+                    "textStyle": {
+                      "variant": "heading3"
+                    }
+                  },
+                  "textStyle": "HEADING_1",
+                  "widgetName": "Text1",
+                  "gridColumns": 70,
+                  "verticalAlign": "AUTO",
+                  "animateLoading": true,
+                  "collapseWhenHidden": true,
+                  "dynamicBindingPathList": [],
+                  "dynamicTriggerPathList": []
+                }
+              ],
+              "parentId": "c1za99h4ei",
+              "widgetId": "51byx91vbd",
+              "canExtend": true,
+              "isLoading": false,
+              "isVisible": true,
+              "isDisabled": false,
+              "widgetName": "Canvas3",
+              "gridColumns": 80,
+              "detachFromLayout": true,
+              "collapseWhenHidden": true,
+              "shouldScrollContents": true
+            }
+          ],
+          "parentId": "oqa6rbq7g2",
+          "widgetId": "c1za99h4ei",
+          "canExtend": true,
+          "isLoading": false,
+          "isVisible": true,
+          "widgetName": "Section3",
+          "gridColumns": 1,
+          "dragDisabled": true,
+          "detachFromLayout": true,
+          "collapseWhenHidden": true
+        },
+        {
+          "top": {
+            "mode": "gridUnit",
+            "value": 0
+          },
+          "left": {
+            "mode": "gridUnit",
+            "value": 0
+          },
+          "type": "SECTION_WIDGET",
+          "width": {
+            "mode": "gridUnit",
+            "value": 1
+          },
+          "height": {
+            "mode": "fillParent",
+            "value": 1
+          },
+          "appMode": "EDIT",
+          "children": [
+            {
+              "top": {
+                "mode": "gridUnit",
+                "value": 0
+              },
+              "left": {
+                "mode": "gridUnit",
+                "value": 0
+              },
+              "type": "CANVAS_WIDGET",
+              "width": {
+                "mode": "gridUnit",
+                "value": 80
+              },
+              "height": {
+                "mode": "fitContent",
+                "value": 1
+              },
+              "layout": "VSTACK",
+              "appMode": "EDIT",
+              "padding": {
+                "top": {
+                  "mode": "px",
+                  "value": 0
+                },
+                "left": {
+                  "mode": "px",
+                  "value": 0
+                },
+                "right": {
+                  "mode": "px",
+                  "value": 0
+                },
+                "bottom": {
+                  "mode": "px",
+                  "value": 0
+                }
+              },
+              "spacing": {
+                "mode": "px",
+                "value": 12
+              },
+              "children": [
+                {
+                  "top": {
+                    "mode": "gridUnit",
+                    "value": 0
+                  },
+                  "left": {
+                    "mode": "gridUnit",
+                    "value": 0
+                  },
+                  "rows": 30,
+                  "type": "CUSTOM_WIDGET:4a23ea18-07dc-443f-93a9-fdfec31fa927",
+                  "width": {
+                    "mode": "gridUnit",
+                    "value": 50
+                  },
+                  "height": {
+                    "mode": "fillParent",
+                    "value": 1
+                  },
+                  "appMode": "EDIT",
+                  "columns": 50,
+                  "parentId": "hvt8lergn9",
+                  "widgetId": "7mrydlhxjw",
+                  "isLoading": false,
+                  "isVisible": true,
+                  "widgetName": "WeavyMessenger1",
+                  "gridColumns": 50,
+                  "default_name": "ACME Conversations",
+                  "default_theme": "{{theme}}",
+                  "onTokenExpired": [
+                    {
+                      "id": "z2zc6maquc",
+                      "type": "executeApi",
+                      "apiNames": [
+                        "GetWeavyToken"
+                      ]
+                    }
+                  ],
+                  "default_weavyUrl": "{{App.WEAVY_URL.value}}",
+                  "collapseWhenHidden": true,
+                  "default_accessToken": "{{GetWeavyToken.response?.access_token}}",
+                  "default_enablePolls": true,
+                  "default_enableTyping": true,
+                  "default_weavyOptions": "{{{}}}",
+                  "default_enableMentions": true,
+                  "default_enablePreviews": true,
+                  "default_enableReceipts": true,
+                  "dynamicBindingPathList": [
+                    {
+                      "key": "default_weavyUrl"
+                    },
+                    {
+                      "key": "default_accessToken"
+                    },
+                    {
+                      "key": "default_theme"
+                    },
+                    {
+                      "key": "default_weavyOptions"
+                    }
+                  ],
+                  "dynamicTriggerPathList": [
+                    {
+                      "key": "onTokenExpired"
+                    }
+                  ],
+                  "default_enableReactions": true,
+                  "default_enableCloudFiles": true,
+                  "default_enableGoogleMeet": true,
+                  "default_enableAttachments": true,
+                  "default_enableZoomMeetings": true,
+                  "default_enableMicrosoftTeams": true
+                }
+              ],
+              "parentId": "5vyn0pbd0m",
+              "widgetId": "hvt8lergn9",
+              "alignment": "STRETCH",
+              "canExtend": true,
+              "isLoading": false,
+              "isVisible": true,
+              "isDisabled": false,
+              "widgetName": "Canvas4",
+              "gridColumns": 80,
+              "distribution": "TOP",
+              "detachFromLayout": true,
+              "collapseWhenHidden": true,
+              "shouldScrollContents": true,
+              "dynamicBindingPathList": [],
+              "dynamicTriggerPathList": []
+            }
+          ],
+          "parentId": "oqa6rbq7g2",
+          "widgetId": "5vyn0pbd0m",
+          "canExtend": true,
+          "isLoading": false,
+          "isVisible": true,
+          "widgetName": "Section4",
+          "gridColumns": 1,
+          "dragDisabled": true,
+          "detachFromLayout": true,
+          "collapseWhenHidden": true,
+          "dynamicBindingPathList": [],
+          "dynamicTriggerPathList": []
+        }
+      ],
+      "parentId": "0",
+      "widgetId": "oqa6rbq7g2",
+      "isLoading": false,
+      "widgetName": "MessengerSlideout",
+      "gridColumns": 80,
+      "hasBackdrop": true,
+      "detachFromLayout": true,
+      "canOutsideClickClose": true,
+      "shouldScrollContents": true,
+      "dynamicBindingPathList": [],
+      "dynamicTriggerPathList": []
+    }
+  ],
+  "minWidth": {
+    "mode": "px",
+    "value": 300
+  },
+  "widgetId": "0",
+  "canExtend": true,
+  "embedding": {
+    "propertyMap": {},
+    "emittedEvents": {},
+    "triggerableEvents": {}
+  },
+  "stateVars": {
+    "stateVarMap": {
+      "a5465c2f-bdda-45fb-861a-5e3c970a3186": {
+        "id": "a5465c2f-bdda-45fb-861a-5e3c970a3186",
+        "name": "pageNavigationUid",
+        "createdAt": 1732016396164,
+        "persistance": "Temporary",
+        "defaultValue": ""
+      }
+    }
+  },
+  "cachedData": {
+    "pageLoadActions": {
+      "apiDeps": {
+        "GetWeavyToken": []
+      },
+      "apiNames": [
+        "GetWeavyToken"
+      ]
+    }
+  },
+  "onPageLoad": [
+    {
+      "id": "798253bu8o",
+      "code": "/* Set selected row and tab from URL */\nTable1.set(\"selectedRowIndex\", Global.URL.queryParams.user || 0);\nTabs1.set(\"selectedTab\",Global.URL.queryParams.tab || \"Feed\");",
+      "type": "runJs"
+    },
+    {
+      "id": "j9kg9kw886",
+      "type": "optimizedPageLoadApis"
+    }
+  ],
+  "widgetName": "UsersPage",
+  "gridColumns": 96,
+  "layoutVersion": 6,
+  "detachFromLayout": true,
+  "dynamicBindingPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onPageLoad"
+    },
+    {
+      "key": "onPageLoad"
+    }
+  ]
+}
