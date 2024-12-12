@@ -70,6 +70,17 @@ exports.ApiCommands = class ApiCommands extends (
   }
 };
 
+function applyToChildren(node, replacer) {
+  if (node.children) {
+    node.children = node.children?.map((childObject) => {
+      childObject = applyToChildren(childObject, replacer);
+      return replacer(childObject);
+    });
+  }
+  return node;
+}
+exports.applyToChildren = applyToChildren;
+
 function getConfig(sdk) {
   return {
     headers: {
@@ -595,6 +606,7 @@ async function initApp(sdk, metadata, config, integrationMetadata) {
 
     const weavyUrl = await getWeavyURL(sdk, integrationMetadata, config);
     appData = await applyStateVarWeavyUrl(appData, weavyUrl);
+    appData = await applyEventNavigate(appData);
     const response = await createApp(sdk, appData, config);
     app = response.data.data;
   }
@@ -700,8 +712,8 @@ async function createAppSetNavigationWorkflowLink(
                   value: "{{Global.URL}}",
                 },
                 appId: {
-                  value: "{{Global.app.id}}"
-                }
+                  value: "{{Global.app.id}}",
+                },
               },
               workflow: workflow.id,
             },
@@ -776,14 +788,76 @@ async function applyStateVarWeavyUrl(appData, weavyUrl) {
 }
 exports.applyStateVarWeavyUrl = applyStateVarWeavyUrl;
 
+async function applyEventNavigate(appData) {
+  appData.configuration ??= {};
+  appData.configuration.dsl ??= { version: 8 };
+  appData.configuration.dsl.events ??= {};
+  appData.configuration.dsl.events.eventMap ??= {};
+
+  const eventMap = appData.configuration?.dsl?.events?.eventMap;
+
+  for (const event in eventMap) {
+    if (eventMap[event].name === "navigateFromNotification") {
+      delete eventMap[event];
+    }
+  }
+
+  const eventUuid = v4();
+  const eventArgUuid = v4();
+
+  eventMap[eventUuid] = {
+    id: eventUuid,
+    name: "navigateFromNotification",
+    arguments: [
+      {
+        id: eventArgUuid,
+        name: "navigateData",
+      },
+    ],
+    onTrigger: [
+      {
+        id: "ik3tohzzvy",
+        code: '// Get data from the Weavy Notification Events component\nlet { url, appId, queryParams } = WeavyNotificationEvents1.navigateData;\n\n// Set default target\nlet target = "SAME_WINDOW";\n\n// Check if it\'s from a different Superblocks app\nif (appId !== Global.app.id) {\n  // Construct an url to the other app\n  url = new URL(\n    "." + url,\n    `https://${Global.URL.host}/applications/${appId}/`,\n  ).toString();\n\n  // Open the other app in a new tab\n  target = "NEW_WINDOW";\n}\n\n// Navigate to the page\nnavigateTo(url, queryParams, target);\n',
+        type: "runJs",
+      },
+    ],
+  };
+
+  appData.initialPageDSL = applyToChildren(
+    appData.initialPageDSL,
+    (component) => {
+      if (component.onNavigate) {
+        //console.log("Found nav event", component);
+        component.onNavigate.forEach((onNavEvent) => {
+          if (
+            onNavEvent.type === "triggerEvent" &&
+            onNavEvent.event.name === "App.navigateFromNotification"
+          ) {
+            onNavEvent.event.id = eventUuid;
+            onNavEvent.eventPayload = {
+              [eventArgUuid]: `{{${component.widgetName}.navigateData}}`,
+            };
+          }
+        });
+      }
+      return component;
+    }
+  );
+
+  return appData;
+}
+exports.applyEventNavigate = applyEventNavigate;
+
 async function validateStateVarWeavyUrl(sdk, app, integrationMetadata, config) {
   const weavyUrl = await getWeavyURL(sdk, integrationMetadata, config);
   let validStateVar = false;
   do {
-    const appData = (await sdk.fetchApplication({
-      applicationId: app.id,
-      viewMode: "editor",
-    })).application;
+    const appData = (
+      await sdk.fetchApplication({
+        applicationId: app.id,
+        viewMode: "editor",
+      })
+    ).application;
 
     if (!appData) {
       throw new Error(`Could not get app ${app.name}`);
@@ -842,7 +916,7 @@ async function validateStateVarWeavyUrl(sdk, app, integrationMetadata, config) {
     }
   } while (!validStateVar);
 }
-exports.validateStateVarWeavyUrl = validateStateVarWeavyUrl
+exports.validateStateVarWeavyUrl = validateStateVarWeavyUrl;
 
 async function getWeavyURL(sdk, integrationMetadata, config) {
   const integration = await getIntegration(sdk, integrationMetadata, config);
@@ -1045,7 +1119,9 @@ async function copyComponentsToApp(resource) {
 exports.copyComponentsToApp = copyComponentsToApp;
 
 async function installComponentPackages(resource, version) {
-  const spinner = ora(`Installing app packages${version ? ` with WEAVY_DEV_VERSION` : ""}`).start();
+  const spinner = ora(
+    `Installing app packages${version ? ` with WEAVY_DEV_VERSION` : ""}`
+  ).start();
   try {
     await exec(
       `npm install @weavy/uikit-react${version ? `@${version}` : ""}`,
