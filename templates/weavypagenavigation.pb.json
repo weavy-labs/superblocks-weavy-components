@@ -25,19 +25,19 @@
             {
               "name": "returnExistingMetadata",
               "return": {
-                "data": "{{{   page: JSON.parse(atob(getApp.output.metadata.page)) }}}"
+                "data": "{{{ source_name: getApp.output.metadata.source_name, source_url: getApp.output.metadata.source_url, source_data: getApp.output.metadata.source_data }}}"
               }
             }
           ],
-          "condition": "{{getApp.output.metadata?.page}}"
+          "condition": "{{ getApp.output.metadata?.source_name && getApp.output.metadata?.source_url && getApp.output.metadata?.source_data }}"
         },
         "else": {
           "blocks": [
             {
-              "name": "pageParams",
+              "name": "metadata",
               "step": {
                 "javascript": {
-                  "body": "const appId = body.appId || undefined;\nconst route = body.url.currentRoute || undefined;\nconst queryParams = body.url.queryParams || undefined;\n\n// Replace route params with their values\nconst routeParamRegex = /\\/:([^\\/]+)/g;\nconst url = route.replaceAll(routeParamRegex, (m, param) => {\n  return `/${body.url.routeParams[param]}`;\n});\n\n// Remove devMode from query params\ndelete queryParams.devMode;\n\n// Encode it as a base64 string\nconst page = btoa(\n  JSON.stringify({\n    appId: appId,\n    url: url,\n    queryParams: queryParams,\n  }),\n);\nreturn page;\n"
+                  "body": "const appId = body.appId || undefined;\nconst route = body.url.currentRoute || undefined;\nconst queryParams = body.url.queryParams || undefined;\n\n// Replace route params with their values\nconst routeParamRegex = /\\/:([^\\/]+)/g;\nconst localUrl = route?.replaceAll(routeParamRegex, (m, param) => {\n  return `/${body.url.routeParams[param]}`;\n});\n\n// Remove devMode from query params\ndelete queryParams.devMode;\n\n// Construct link url\nconst url = new URL(\n  `/applications/${appId}${localUrl}`,\n  `${body.url.protocol}//${body.url.host}`,\n);\n\nurl.search = new URLSearchParams(queryParams).toString();\n\n// Encode it as a base64 string\nconst page = btoa(\n  JSON.stringify({\n    appId: appId,\n    url: localUrl,\n    queryParams: queryParams,\n  }),\n);\n\nreturn {\n  ...getApp.output?.metadata,\n  source_name: \"superblocks\",\n  source_url: url,\n  source_data: page,\n};\n"
                 },
                 "integration": "javascript"
               }
@@ -47,7 +47,7 @@
               "step": {
                 "integration": "1bbbad61-f66b-4cf1-9263-429eedd8c86e",
                 "restapiintegration": {
-                  "body": "{ \"metadata\": { \"page\": \"{{ pageParams.output }}\" } }",
+                  "body": "{ \"metadata\": {{ metadata.output }} }",
                   "params": [],
                   "headers": [],
                   "urlBase": "",
@@ -63,7 +63,7 @@
             {
               "name": "returnUpdatedMetadata",
               "return": {
-                "data": "{{{ page: JSON.parse(atob(setApp.output.metadata.page)) }}}"
+                "data": "{{{ source_name: setApp.output.metadata.source_name, source_url: setApp.output.metadata.source_url, source_data: setApp.output.metadata.source_data }}}"
               }
             }
           ]

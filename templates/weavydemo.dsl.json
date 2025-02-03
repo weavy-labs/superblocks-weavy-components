@@ -252,12 +252,12 @@
                   "id": "ze53tnuovz",
                   "type": "triggerEvent",
                   "event": {
-                    "id": "d42326fa-df30-4532-b4f1-7bb859191962",
+                    "id": "83e89efb-465f-4306-8df0-114da797f5b8",
                     "name": "App.navigateFromNotification",
                     "scope": "APP"
                   },
                   "eventPayload": {
-                    "14f8dc83-a77d-41a6-9640-e086090dbfe0": "{{WeavyNotificationEvents1.navigateData}}"
+                    "ebd77499-7d1f-47b8-a813-59bb43c09490": "{{WeavyNotificationEvents1.navigateData}}"
                   }
                 }
               ],
@@ -761,12 +761,12 @@
                       "id": "2zozrzfx3m",
                       "type": "triggerEvent",
                       "event": {
-                        "id": "d42326fa-df30-4532-b4f1-7bb859191962",
+                        "id": "83e89efb-465f-4306-8df0-114da797f5b8",
                         "name": "App.navigateFromNotification",
                         "scope": "APP"
                       },
                       "eventPayload": {
-                        "14f8dc83-a77d-41a6-9640-e086090dbfe0": "{{WeavyNotifications1.navigateData}}"
+                        "ebd77499-7d1f-47b8-a813-59bb43c09490": "{{WeavyNotifications1.navigateData}}"
                       }
                     },
                     {

@@ -1,10 +1,6 @@
-import {
-  ConversationTypes,
-  WeavyType,
-  WeavyTypes,
-  WyLinkEventType,
-} from "@weavy/uikit-react";
+import { MessengerTypes, WeavyType, WyLinkEventType } from "@weavy/uikit-react";
 import { useCallback } from "react";
+import { AppWithSourceMetadataType } from "@weavy/uikit-react/dist/types/types";
 
 export type NavigateParameters = {
   appId?: string;
@@ -14,14 +10,8 @@ export type NavigateParameters = {
   };
 };
 
-export type AppWithPageType = WeavyTypes.AppType & {
-  metadata?: WeavyTypes.AppType["metadata"] & {
-    page?: string;
-  };
-};
-
 type WyAppRef =
-  | (HTMLElement & { whenApp: () => Promise<AppWithPageType> })
+  | (HTMLElement & { whenApp: () => Promise<AppWithSourceMetadataType> })
   | null;
 
 /**
@@ -40,8 +30,12 @@ export const useSetWeavyNavigationCallback = (
     (weavyComponent: WyAppRef) => {
       if (weavyComponent) {
         requestAnimationFrame(() => {
-          weavyComponent.whenApp().then((app: AppWithPageType) => {
-            if (!app.metadata?.page) {
+          weavyComponent.whenApp().then((app: AppWithSourceMetadataType) => {
+            if (
+              !app.metadata?.source_data ||
+              !app.metadata?.source_url ||
+              !app.metadata?.source_name
+            ) {
               //console.debug("Triggering SetWeavyNavigation", app.uid)
               onSetWeavyNavigation();
             }
@@ -64,8 +58,8 @@ export const useLinkHandler = <
   onShowMessenger?: () => void
 ) => {
   const handleLink = async (e: WyLinkEventType) => {
-    const appType = e.detail.app?.type;
-    const appUid = e.detail.app?.uid;
+    const appType = e.detail.link.app?.type;
+    const appUid = e.detail.link.app?.uid;
 
     updateProperties({
       linkData: e.detail,
@@ -73,47 +67,37 @@ export const useLinkHandler = <
 
     console.log("appUid && weavy", appUid, weavy);
 
-    // Check if the appType guid exists in the ConversationTypes map
-    if (ConversationTypes.has(appType as string)) {
+    // Check if the appType guid exists in the MessengerTypes map
+    if (appType && MessengerTypes.has(appType)) {
       // Show the messenger
       onShowMessenger?.();
-    } else if (appUid && weavy) {
+    } else if (e.detail.source_name === "superblocks" && e.detail.source_data) {
       // Show a contextual block by navigation to another page
+      let pageData: NavigateParameters;
+      try {
+        pageData = JSON.parse(atob(e.detail.source_data));
 
-      // First we much fetch the app metadata from the server
-      const response = await weavy.fetch(`/api/apps/${appUid}`);
-      if (!response.ok) {
-        console.error("Error fetching app");
-        return;
+        console.log("setting navigateData", pageData);
+        updateProperties({
+          navigateData: pageData ?? {},
+        } as Partial<Props>);
+
+        onNavigate();
+      } catch (e) {
+        console.warn("Could not parse page metadata", e);
+        updateProperties({
+          navigateData: {},
+        } as Partial<Props>);
+      }
+    } else {
+      if (e.detail.source_url) {
+        // Open external source
+        window.open(e.detail.source_url, "_blank");
       }
 
-      const { uid, metadata } = (await response.json()) as AppWithPageType;
-
-      console.log("metadata", uid, metadata);
-      if (uid) {
-        if (metadata?.page) {
-          let pageData: NavigateParameters;
-          try {
-            pageData = JSON.parse(atob(metadata.page));
-
-            console.log("setting navigateData", pageData);
-            updateProperties({
-              navigateData: pageData ?? {},
-            } as Partial<Props>);
-
-            onNavigate();
-          } catch (e) {
-            console.warn("Could not parse page metadata", e);
-            updateProperties({
-              navigateData: {},
-            } as Partial<Props>);
-          }
-        } else {
-          updateProperties({
-            navigateData: {},
-          } as Partial<Props>);
-        }
-      }
+      updateProperties({
+        navigateData: {},
+      } as Partial<Props>);
     }
 
     //triggerLink()

@@ -1,6 +1,6 @@
 {
   "name": "superblocks-weavy-example",
-  "version": "25.2.0",
+  "version": "26.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -19,13 +19,13 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@superblocksteam/cli": "^1.9.0",
+    "@superblocksteam/cli": "^1.9.2",
     "chalk": "^4.1.2",
     "dotenv": "^16.4.7",
     "inquirer": "^8.2.6",
     "ora": "^5.4.1",
-    "uuid": "^11.0.3",
-    "yaml": "^2.6.1"
+    "uuid": "^11.0.5",
+    "yaml": "^2.7.0"
   },
   "engines": {
     "node": ">=20.0.0"

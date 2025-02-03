@@ -125,12 +125,12 @@ export default function Component({
       weavy.notificationEvents = true;
 
       // Add a realtime notification event listener
-      weavy.host?.addEventListener("wy:notifications", handleNotifications);
+      weavy.host?.addEventListener("wy-notifications", handleNotifications);
 
       return () => {
         // Unregister the event listener when the component is unmounted
         weavy.host?.removeEventListener(
-          "wy:notifications",
+          "wy-notifications",
           handleNotifications
         );
       };
