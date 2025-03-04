@@ -817,7 +817,7 @@ async function applyEventNavigate(appData) {
     onTrigger: [
       {
         id: "ik3tohzzvy",
-        code: '// Get data from the Weavy Notification Events component\nlet { url, appId, queryParams } = WeavyNotificationEvents1.navigateData;\n\n// Set default target\nlet target = "SAME_WINDOW";\n\n// Check if it\'s from a different Superblocks app\nif (appId !== Global.app.id) {\n  // Construct an url to the other app\n  url = new URL(\n    "." + url,\n    `https://${Global.URL.host}/applications/${appId}/`,\n  ).toString();\n\n  // Open the other app in a new tab\n  target = "NEW_WINDOW";\n}\n\n// Navigate to the page\nnavigateTo(url, queryParams, target);\n',
+        code: '// Get data from the Weavy Notification Events component\nlet { url, appId, queryParams } = currentEvent.navigateData;\n\n// Set default target\nlet target = "SAME_WINDOW";\n\n// Check if it\'s from a different Superblocks app\nif (appId !== Global.app.id) {\n  // Construct an url to the other app\n  url = new URL(\n    "." + url,\n    `https://${Global.URL.host}/applications/${appId}/`,\n  ).toString();\n\n  // Open the other app in a new tab\n  target = "NEW_WINDOW";\n}\n\n// Navigate to the page\nnavigateTo(url, queryParams, target);\n',
         type: "runJs",
       },
     ],
