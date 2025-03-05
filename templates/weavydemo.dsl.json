@@ -252,12 +252,12 @@
                   "id": "ze53tnuovz",
                   "type": "triggerEvent",
                   "event": {
-                    "id": "83e89efb-465f-4306-8df0-114da797f5b8",
+                    "id": "3004398d-a0a4-4be0-84f9-80c4532db6e3",
                     "name": "App.navigateFromNotification",
                     "scope": "APP"
                   },
                   "eventPayload": {
-                    "ebd77499-7d1f-47b8-a813-59bb43c09490": "{{WeavyNotificationEvents1.navigateData}}"
+                    "623df73d-d786-413d-a71b-c06a7e373b69": "{{WeavyNotificationEvents1.navigateData}}"
                   }
                 }
               ],
@@ -387,7 +387,7 @@
                 "value": 40
               },
               "isDisabled": false,
-              "widgetName": "Button2",
+              "widgetName": "NotificationsButton",
               "buttonStyle": "PRIMARY_BUTTON",
               "gridColumns": 12,
               "iconPosition": "LEFT",
@@ -486,7 +486,7 @@
                 "value": 40
               },
               "isDisabled": false,
-              "widgetName": "Button1",
+              "widgetName": "MessengerButton",
               "buttonStyle": "PRIMARY_BUTTON",
               "gridColumns": 4,
               "iconPosition": "LEFT",
@@ -761,12 +761,12 @@
                       "id": "2zozrzfx3m",
                       "type": "triggerEvent",
                       "event": {
-                        "id": "83e89efb-465f-4306-8df0-114da797f5b8",
+                        "id": "3004398d-a0a4-4be0-84f9-80c4532db6e3",
                         "name": "App.navigateFromNotification",
                         "scope": "APP"
                       },
                       "eventPayload": {
-                        "ebd77499-7d1f-47b8-a813-59bb43c09490": "{{WeavyNotifications1.navigateData}}"
+                        "623df73d-d786-413d-a71b-c06a7e373b69": "{{WeavyNotifications1.navigateData}}"
                       }
                     },
                     {
@@ -875,8 +875,8 @@
         "value": 96
       },
       "height": {
-        "mode": "fitContent",
-        "value": 41.833333333333336
+        "mode": "fillParent",
+        "value": 1
       },
       "children": [
         {
@@ -895,7 +895,7 @@
           },
           "height": {
             "mode": "fitContent",
-            "value": 40
+            "value": 37
           },
           "layout": "VSTACK",
           "spacing": {
@@ -1284,7 +1284,7 @@
           },
           "height": {
             "mode": "fitContent",
-            "value": 40
+            "value": 51
           },
           "layout": "VSTACK",
           "appMode": "EDIT",
@@ -1326,7 +1326,7 @@
               },
               "height": {
                 "mode": "gridUnit",
-                "value": 40
+                "value": 51
               },
               "appMode": "EDIT",
               "children": [
@@ -1347,7 +1347,7 @@
                   },
                   "height": {
                     "mode": "gridUnit",
-                    "value": 37
+                    "value": 2
                   },
                   "layout": "VSTACK",
                   "appMode": "EDIT",
@@ -1672,7 +1672,7 @@
                   },
                   "height": {
                     "mode": "gridUnit",
-                    "value": 37
+                    "value": 1
                   },
                   "layout": "VSTACK",
                   "appMode": "EDIT",

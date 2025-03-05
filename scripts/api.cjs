@@ -600,13 +600,14 @@ async function initApp(sdk, metadata, config, integrationMetadata) {
   }
 
   if (!app) {
-    const dsl =
-      await require(`../templates/${metadata.name.toLowerCase()}.dsl.json`);
-    let appData = { ...metadata, initialPageDSL: dsl };
-
+    const dsl = await require(`../templates/${metadata.name.toLowerCase()}.dsl.json`);
+      
+      const configuration = await require(`../templates/${metadata.name.toLowerCase()}.configuration.dsl.json`);
+      
+      let appData = { ...metadata, configuration, initialPageDSL: dsl };
     const weavyUrl = await getWeavyURL(sdk, integrationMetadata, config);
     appData = await applyStateVarWeavyUrl(appData, weavyUrl);
-    appData = await applyEventNavigate(appData);
+    //appData = await applyEventNavigate(appData);
     const response = await createApp(sdk, appData, config);
     app = response.data.data;
   }
@@ -749,7 +750,7 @@ async function fetchAppFiles(sdk, app, resource) {
   }
   try {
     await execWithOutput(
-      `superblocks pull ${resource.location.replace("'", "\\'")}`
+      `superblocks pull ${path.sep === path.posix.sep ? resource.location.replace("'", "\\'") : resource.location}`
     );
   } catch (e) {
     console.error(e);
@@ -1217,3 +1218,38 @@ async function saveAppPageDSL(sdk, app, page, config) {
   }
 }
 exports.saveAppPageDSL = saveAppPageDSL;
+
+async function saveAppConfigurationDSL(sdk, app, config) {
+  const spinner = ora(`Saving events template for ${app.name}`).start();
+  try {
+    const appData = await getApp(sdk, app);
+    const dsl = appData.configuration.dsl;
+
+    const stateVarMap = dsl.stateVars?.stateVarMap ?? {};
+
+    Object.entries(stateVarMap).forEach(([key, value]) => {
+      // Remove WEAVY_URL
+      if (value.name === "WEAVY_URL") {
+        delete dsl.stateVars.stateVarMap[key];
+      }
+    })
+
+    {
+      const dslJson = JSON.stringify(dsl, undefined, 2);
+
+      await fs.writeFile(
+        path.resolve(
+          __dirname,
+          `../templates/${app.name.toLowerCase()}.configuration.dsl.json`
+        ),
+        dslJson,
+        { encoding: "utf8" }
+      );
+    }
+
+    spinner.succeed();
+  } catch (e) {
+    spinner.fail(`${spinner.text}: ${e.message}`);
+  }
+}
+exports.saveAppConfigurationDSL = saveAppConfigurationDSL;

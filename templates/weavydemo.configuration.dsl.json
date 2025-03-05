@@ -1,0 +1,30 @@
+{
+  "events": {
+    "eventMap": {
+      "3004398d-a0a4-4be0-84f9-80c4532db6e3": {
+        "id": "3004398d-a0a4-4be0-84f9-80c4532db6e3",
+        "name": "navigateFromNotification",
+        "arguments": [
+          {
+            "id": "623df73d-d786-413d-a71b-c06a7e373b69",
+            "name": "navigateData"
+          }
+        ],
+        "onTrigger": [
+          {
+            "id": "ik3tohzzvy",
+            "code": "// Get data from the Weavy Notification Events component\nlet { url, appId, queryParams } = currentEvent.navigateData;\n\n// Set default target\nlet target = \"SAME_WINDOW\";\n\n// Check if it's from a different Superblocks app\nif (appId !== Global.app.id) {\n  // Construct an url to the other app\n  url = new URL(\n    \".\" + url,\n    `https://${Global.URL.host}/applications/${appId}/`,\n  ).toString();\n\n  // Open the other app in a new tab\n  target = \"NEW_WINDOW\";\n}\n\n// Navigate to the page\nnavigateTo(url, queryParams, target);\n",
+            "type": "runJs"
+          }
+        ]
+      }
+    }
+  },
+  "timers": {
+    "timerMap": {}
+  },
+  "version": 8,
+  "stateVars": {
+    "stateVarMap": {}
+  }
+}

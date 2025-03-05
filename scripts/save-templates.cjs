@@ -6,6 +6,7 @@ const {
   saveWorkflowTemplate,
   saveAppPageDSL,
   getFullWorkflow,
+  saveAppConfigurationDSL,
 } = require("./api.cjs")
 const chalk = require("chalk")
 const { exit } = require("process")
@@ -61,6 +62,7 @@ apiCommands.init().then(async () => {
     } else {
       const page = app.pageSummaryList[0]
       await saveAppPageDSL(sdk, app, page, config)
+      await saveAppConfigurationDSL(sdk, app)
     }
   }
 
@@ -77,6 +79,7 @@ apiCommands.init().then(async () => {
     } else {
       const page = app.pageSummaryList[0]
       await saveAppPageDSL(sdk, app, page, config)
+      await saveAppConfigurationDSL(sdk, app)
     }
   }
 
