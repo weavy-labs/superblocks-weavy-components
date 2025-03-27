@@ -1,12 +1,12 @@
 {
   "events": {
     "eventMap": {
-      "3004398d-a0a4-4be0-84f9-80c4532db6e3": {
-        "id": "3004398d-a0a4-4be0-84f9-80c4532db6e3",
+      "2411efaa-415e-4295-b35e-8e5a2ec05190": {
+        "id": "2411efaa-415e-4295-b35e-8e5a2ec05190",
         "name": "navigateFromNotification",
         "arguments": [
           {
-            "id": "623df73d-d786-413d-a71b-c06a7e373b69",
+            "id": "d31488b7-c0c0-420c-8503-2daa1c509626",
             "name": "navigateData"
           }
         ],

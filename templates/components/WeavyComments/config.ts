@@ -47,12 +47,21 @@ export default {
       }
     },
     {
+      path: "enableEmbeds",
+      dataType: "boolean",
+      propertiesPanelDisplay: {
+        label: "Embeds",
+        controlType: "switch",
+        defaultValue: true,
+      }
+    },
+    {
       path: "enableGoogleMeet",
       dataType: "boolean",
       propertiesPanelDisplay: {
         label: "Google Meet",
         controlType: "switch",
-        defaultValue: true,
+        defaultValue: false,
       }
     },
     {
@@ -61,7 +70,7 @@ export default {
       propertiesPanelDisplay: {
         label: "Microsoft Teams",
         controlType: "switch",
-        defaultValue: true,
+        defaultValue: false,
       }
     },
     {
@@ -70,7 +79,7 @@ export default {
       propertiesPanelDisplay: {
         label: "Zoom Meetings",
         controlType: "switch",
-        defaultValue: true,
+        defaultValue: false,
       }
     },
     {
@@ -78,6 +87,15 @@ export default {
       dataType: "boolean",
       propertiesPanelDisplay: {
         label: "Mentions",
+        controlType: "switch",
+        defaultValue: true,
+      }
+    },
+    {
+      path: "enablePolls",
+      dataType: "boolean",
+      propertiesPanelDisplay: {
+        label: "Polls",
         controlType: "switch",
         defaultValue: true,
       }

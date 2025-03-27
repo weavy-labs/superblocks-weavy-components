@@ -11,6 +11,7 @@ export type Props = {
   name: string | null;
   enableAttachments: boolean;
   enableCloudFiles: boolean;
+  enableEmbeds: boolean;
   enableGoogleMeet: boolean;
   enableMicrosoftTeams: boolean;
   enableZoomMeetings: boolean;
@@ -18,6 +19,8 @@ export type Props = {
   enablePolls: boolean;
   enablePreviews: boolean;
   enableReactions: boolean;
+  enableReceipts: boolean;
+  enableTyping: boolean;
   enableNotifications: boolean;
   forceDarkMode: boolean;
   theme: any;

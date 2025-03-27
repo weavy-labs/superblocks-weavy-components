@@ -3,7 +3,7 @@ import {
   useSuperblocksIsLoading,
 } from "@superblocksteam/custom-components";
 import { type Props, type EventTriggers } from "./types";
-import { useWeavy, WyFiles } from "@weavy/uikit-react";
+import { Feature, useWeavy, WyFiles } from "@weavy/uikit-react";
 import { useSetWeavyNavigationCallback } from "../WeavyNotificationEvents/notifications";
 import { ComponentProps, useEffect } from "react";
 import { useHooksInternalContext } from "@superblocksteam/custom-components/dist/hooksPlumbing";
@@ -64,16 +64,21 @@ export default function WeavyFiles({
     }
   }, [isLoading]);
 
-  const featureProps = {
-    noAttachments: props.enableAttachments === false,
-    noComments: props.enableComments === false,
-    noCloudFiles: props.enableCloudFiles === false,
-    noMentions: props.enableMentions === false,
-    noPreviews: props.enablePreviews === false,
-    noReactions: props.enableReactions === false,
-    noVersions: props.enableVersions === false,
-    noWebDAV: props.enableWebDAV === false,
-  };
+  const features = [
+    props.enableAttachments && Feature.Attachments,
+    props.enableCloudFiles && Feature.CloudFiles,
+    props.enableComments && Feature.Comments,
+    props.enableEmbeds && Feature.Embeds,
+    props.enableGoogleMeet && Feature.GoogleMeet,
+    props.enableMicrosoftTeams && Feature.MicrosoftTeams,
+    props.enableZoomMeetings && Feature.ZoomMeetings,
+    props.enableMentions && Feature.Mentions,
+    props.enablePolls && Feature.Polls,
+    props.enablePreviews && Feature.Previews,
+    props.enableReactions && Feature.Reactions,
+    props.enableVersions && Feature.Versions,
+    props.enableWebDAV && Feature.WebDAV,
+  ].filter((f) => f).join(" ");
 
   const notificationProps = {
     notifications: enableNotifications
@@ -92,8 +97,8 @@ export default function WeavyFiles({
       style={weavyContainerStyle}
       className={modeClassName}
       uid={uid}
-      name={name}
-      {...featureProps}
+      name={name || undefined}
+      features={features}
       {...notificationProps}
     />
   );

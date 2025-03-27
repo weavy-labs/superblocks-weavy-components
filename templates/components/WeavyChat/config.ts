@@ -47,6 +47,15 @@ export default {
       }
     },
     {
+      path: "enableEmbeds",
+      dataType: "boolean",
+      propertiesPanelDisplay: {
+        label: "Embeds",
+        controlType: "switch",
+        defaultValue: true,
+      }
+    },
+    {
       path: "enableGoogleMeet",
       dataType: "boolean",
       propertiesPanelDisplay: {
@@ -107,6 +116,24 @@ export default {
         label: "Reactions",
         controlType: "switch",
         defaultValue: true,
+      }
+    },
+    {
+      path: "enableReceipts",
+      dataType: "boolean",
+      propertiesPanelDisplay: {
+        label: "Reactions",
+        controlType: "switch",
+        defaultValue: false,
+      }
+    },
+    {
+      path: "enableTyping",
+      dataType: "boolean",
+      propertiesPanelDisplay: {
+        label: "Typing indicators",
+        controlType: "switch",
+        defaultValue: false,
       }
     },
     {

@@ -11,6 +11,7 @@ export type Props = {
   bot: string | null;
   enableAttachments: boolean;
   enableCloudFiles: boolean;
+  enableEmbeds: boolean;
   enableGoogleMeet: boolean;
   enableMicrosoftTeams: boolean;
   enableZoomMeetings: boolean;

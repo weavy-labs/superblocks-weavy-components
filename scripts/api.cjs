@@ -609,7 +609,7 @@ async function initApp(sdk, metadata, config, integrationMetadata) {
     let appData = { ...metadata, initialPageDSL: dsl };
     const weavyUrl = await getWeavyURL(sdk, integrationMetadata, config);
     appData = await applyStateVarWeavyUrl(appData, weavyUrl);
-    appData = await applyEventNavigate(appData);
+    //appData = await applyEventNavigate(appData);
     const response = await createApp(sdk, appData, config);
     app = response.data.data;
   }

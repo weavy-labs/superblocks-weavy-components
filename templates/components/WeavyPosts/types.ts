@@ -10,8 +10,8 @@ export type Props = {
   uid: string | null;
   name: string | null;
   enableAttachments: boolean;
-  enableComments: boolean;
   enableCloudFiles: boolean;
+  enableComments: boolean;
   enableEmbeds: boolean;
   enableGoogleMeet: boolean;
   enableMicrosoftTeams: boolean;

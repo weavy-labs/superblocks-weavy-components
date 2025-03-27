@@ -3,13 +3,25 @@ import {
   useSuperblocksIsLoading,
 } from "@superblocksteam/custom-components";
 import { type Props, type EventTriggers } from "./types";
-import { Feature, useWeavy, WyChat } from "@weavy/uikit-react";
+import {
+  Feature,
+  useWeavy,
+  WeavyComponents,
+  WyCopilot,
+} from "@weavy/uikit-react";
 import { useSetWeavyNavigationCallback } from "../WeavyNotificationEvents/notifications";
-import { ComponentProps, useEffect } from "react";
-import { useHooksInternalContext } from "@superblocksteam/custom-components/dist/hooksPlumbing";
+import { ComponentProps, useRef } from "react";
 
-export default function WeavyChat({
+const { WyButton, WyIcon } = WeavyComponents;
+
+export default function WeavyCopilot({
+  bot,
+  instructions,
+  contextData,
+  suggestions,
+  enableNewButton,
   uid,
+  enableAutoUid,
   name,
   weavyUrl,
   accessToken,
@@ -17,6 +29,8 @@ export default function WeavyChat({
   theme,
   forceDarkMode,
   enableNotifications,
+  lastMessage,
+  appId,
   ...props
 }: Props) {
   const weavyContainerStyle: React.CSSProperties & {
@@ -39,9 +53,11 @@ export default function WeavyChat({
     forceDarkMode || theme?.mode === "DARK" ? "wy-dark" : "";
 
   const {
+    events: { onSetWeavyNavigation, onTokenExpired, onApp, onMessage },
     updateProperties,
-    events: { onSetWeavyNavigation, onTokenExpired },
   } = useSuperblocksContext<Props, EventTriggers>();
+
+  const copilotRef = useRef<any>();
 
   useWeavy(
     {
@@ -58,30 +74,14 @@ export default function WeavyChat({
     [accessToken],
   );
 
-  const { widgetId } = useHooksInternalContext().ccRenderingContext;
-  const isLoading = useSuperblocksIsLoading();
-
-  useEffect(() => {
-    if (!isLoading && !uid) {
-      // Set default uid when not defined
-      updateProperties({
-        uid: `superblocks:chat-${widgetId}`,
-      });
-    }
-  }, [isLoading]);
-
   const features = [
-    props.enableAttachments && Feature.Attachments,
-    props.enableCloudFiles && Feature.CloudFiles,
+    //props.enableAttachments && Feature.Attachments,
+    //props.enableContextData && Feature.ContextData,
+    Feature.ContextData,
     props.enableEmbeds && Feature.Embeds,
-    props.enableGoogleMeet && Feature.GoogleMeet,
-    props.enableMicrosoftTeams && Feature.MicrosoftTeams,
-    props.enableZoomMeetings && Feature.ZoomMeetings,
     props.enableMentions && Feature.Mentions,
-    props.enablePolls && Feature.Polls,
     props.enablePreviews && Feature.Previews,
     props.enableReactions && Feature.Reactions,
-    props.enableReceipts && Feature.Receipts,
     props.enableTyping && Feature.Typing,
   ]
     .filter((f) => f)
@@ -90,7 +90,7 @@ export default function WeavyChat({
   const notificationProps = {
     notifications: (enableNotifications
       ? "button-list"
-      : "none") as ComponentProps<typeof WyChat>["notifications"],
+      : "none") as ComponentProps<typeof WyCopilot>["notifications"],
   };
 
   const { navigationRefCallBack } = useSetWeavyNavigationCallback(
@@ -99,14 +99,52 @@ export default function WeavyChat({
   );
 
   return (
-    <WyChat
-      ref={uid ? navigationRefCallBack : undefined}
+    <WyCopilot
+      ref={(refObj) => {
+        if (refObj) {
+          copilotRef.current = refObj;
+          uid && navigationRefCallBack(refObj);
+        }
+      }}
       style={weavyContainerStyle}
       className={modeClassName}
-      uid={uid}
+      bot={bot || undefined}
+      instructions={instructions || undefined}
+      data={contextData ? [contextData] : undefined}
+      uid={!enableAutoUid ? uid : undefined}
+      autoUid={enableAutoUid && uid ? uid : undefined}
       name={name || undefined}
+      onWyApp={(e) => {
+        updateProperties({
+          appId: e.detail.app.id,
+        });
+        onApp();
+      }}
+      onWyMessage={(e) => {
+        updateProperties({
+          lastMessage: e.detail,
+        });
+        onMessage();
+      }}
       features={features}
       {...notificationProps}
-    />
+    >
+      {enableNewButton ? (
+        <div slot="actions">
+          <WyButton kind="icon" onClick={() => copilotRef.current?.reset()}>
+            <WyIcon name="stars" />
+          </WyButton>
+        </div>
+      ) : undefined}
+      {suggestions instanceof Array ? (
+        <div slot="suggestion-list" style={{ display: "contents" }}>
+          {suggestions.map((suggestion) => (
+            <WyButton key={suggestion} className="suggestion">
+              {suggestion}
+            </WyButton>
+          ))}
+        </div>
+      ) : undefined}
+    </WyCopilot>
   );
 }

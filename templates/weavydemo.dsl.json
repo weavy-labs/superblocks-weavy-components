@@ -252,12 +252,12 @@
                   "id": "ze53tnuovz",
                   "type": "triggerEvent",
                   "event": {
-                    "id": "3004398d-a0a4-4be0-84f9-80c4532db6e3",
+                    "id": "2411efaa-415e-4295-b35e-8e5a2ec05190",
                     "name": "App.navigateFromNotification",
                     "scope": "APP"
                   },
                   "eventPayload": {
-                    "623df73d-d786-413d-a71b-c06a7e373b69": "{{WeavyNotificationEvents1.navigateData}}"
+                    "d31488b7-c0c0-420c-8503-2daa1c509626": "{{WeavyNotificationEvents1.navigateData}}"
                   }
                 }
               ],
@@ -761,12 +761,12 @@
                       "id": "2zozrzfx3m",
                       "type": "triggerEvent",
                       "event": {
-                        "id": "3004398d-a0a4-4be0-84f9-80c4532db6e3",
+                        "id": "2411efaa-415e-4295-b35e-8e5a2ec05190",
                         "name": "App.navigateFromNotification",
                         "scope": "APP"
                       },
                       "eventPayload": {
-                        "623df73d-d786-413d-a71b-c06a7e373b69": "{{WeavyNotifications1.navigateData}}"
+                        "d31488b7-c0c0-420c-8503-2daa1c509626": "{{WeavyNotifications1.navigateData}}"
                       }
                     },
                     {
@@ -895,7 +895,7 @@
           },
           "height": {
             "mode": "fitContent",
-            "value": 37
+            "value": 54
           },
           "layout": "VSTACK",
           "spacing": {
@@ -1172,9 +1172,6 @@
                   "key": "primaryColumns.name.computedValue"
                 },
                 {
-                  "key": "primaryColumns.name.displayedValue"
-                },
-                {
                   "key": "primaryColumns.twitter.computedValue"
                 },
                 {
@@ -1202,9 +1199,6 @@
                   "key": "primaryColumns.photo.linkLabel"
                 },
                 {
-                  "key": "primaryColumns.photo.displayedValue"
-                },
-                {
                   "key": "primaryColumns.email.computedValue"
                 },
                 {
@@ -1212,9 +1206,6 @@
                 },
                 {
                   "key": "primaryColumns.email.linkLabel"
-                },
-                {
-                  "key": "primaryColumns.email.displayedValue"
                 },
                 {
                   "key": "primaryColumns.action.computedValue"
@@ -1227,9 +1218,6 @@
                 },
                 {
                   "key": "primaryColumns.action.buttonLabel"
-                },
-                {
-                  "key": "primaryColumns.action.displayedValue"
                 },
                 {
                   "key": "defaultSelectedRow"
@@ -1284,7 +1272,7 @@
           },
           "height": {
             "mode": "fitContent",
-            "value": 51
+            "value": 54
           },
           "layout": "VSTACK",
           "appMode": "EDIT",
@@ -1303,6 +1291,11 @@
                 "value": 0
               },
               "tabs": [
+                {
+                  "id": "tabhb0tjmo2u8",
+                  "label": "Copilot",
+                  "widgetId": "kj6k2iqu2r"
+                },
                 {
                   "id": "tab2",
                   "label": "Feed",
@@ -1326,10 +1319,152 @@
               },
               "height": {
                 "mode": "gridUnit",
-                "value": 51
+                "value": 54
               },
               "appMode": "EDIT",
               "children": [
+                {
+                  "top": {
+                    "mode": "gridUnit",
+                    "value": 0
+                  },
+                  "left": {
+                    "mode": "gridUnit",
+                    "value": 0
+                  },
+                  "type": "CANVAS_WIDGET",
+                  "tabId": "tabhb0tjmo2u8",
+                  "width": {
+                    "mode": "gridUnit",
+                    "value": 48
+                  },
+                  "height": {
+                    "mode": "gridUnit",
+                    "value": 1
+                  },
+                  "layout": "VSTACK",
+                  "appMode": "EDIT",
+                  "padding": {
+                    "top": {
+                      "mode": "px",
+                      "value": 0
+                    },
+                    "left": {
+                      "mode": "px",
+                      "value": 0
+                    },
+                    "right": {
+                      "mode": "px",
+                      "value": 0
+                    },
+                    "bottom": {
+                      "mode": "px",
+                      "value": 0
+                    }
+                  },
+                  "spacing": {
+                    "mode": "px",
+                    "value": 12
+                  },
+                  "tabName": "Tab 1",
+                  "children": [
+                    {
+                      "top": {
+                        "mode": "gridUnit",
+                        "value": 0
+                      },
+                      "left": {
+                        "mode": "gridUnit",
+                        "value": 0
+                      },
+                      "rows": 30,
+                      "type": "CUSTOM_WIDGET:400d6451-092f-40df-b2d4-7c6328009fdx",
+                      "width": {
+                        "mode": "fillParent",
+                        "value": 960.4166666666666
+                      },
+                      "height": {
+                        "mode": "fillParent",
+                        "value": 1
+                      },
+                      "appMode": "EDIT",
+                      "columns": 50,
+                      "parentId": "kj6k2iqu2r",
+                      "widgetId": "chr7mxxqr6",
+                      "isLoading": false,
+                      "isVisible": true,
+                      "widgetName": "WeavyCopilot1",
+                      "default_bot": "assistant",
+                      "gridColumns": 50,
+                      "default_theme": "{{theme}}",
+                      "default_weavyUrl": "{{App.WEAVY_URL.value}}",
+                      "collapseWhenHidden": true,
+                      "default_accessToken": "{{GetWeavyToken.response?.access_token}}",
+                      "default_contextData": "Users:\n{{Table1.tableData}}\n\nCurrent user:\n{{Table1.selectedRow}}",
+                      "default_suggestions": "{{['Summarize this page', 'Who is currently selected?', 'Show me Ryans picture']}}",
+                      "default_enableEmbeds": true,
+                      "default_enableTyping": true,
+                      "default_instructions": "The attached data is from a table with JSON data. Prefer markdown in answers.",
+                      "default_weavyOptions": "{{{}}}",
+                      "default_enableAutoUid": true,
+                      "default_enablePreviews": true,
+                      "dynamicBindingPathList": [
+                        {
+                          "key": "default_suggestions"
+                        },
+                        {
+                          "key": "default_enableNewButton"
+                        },
+                        {
+                          "key": "default_enableAutoUid"
+                        },
+                        {
+                          "key": "default_enableEmbeds"
+                        },
+                        {
+                          "key": "default_enablePreviews"
+                        },
+                        {
+                          "key": "default_enableTyping"
+                        },
+                        {
+                          "key": "default_enableNotifications"
+                        },
+                        {
+                          "key": "default_theme"
+                        },
+                        {
+                          "key": "default_weavyUrl"
+                        },
+                        {
+                          "key": "default_accessToken"
+                        },
+                        {
+                          "key": "default_weavyOptions"
+                        },
+                        {
+                          "key": "default_contextData"
+                        }
+                      ],
+                      "dynamicTriggerPathList": [],
+                      "default_enableNewButton": true,
+                      "default_enableNotifications": true
+                    }
+                  ],
+                  "parentId": "dfq2m87x9d",
+                  "widgetId": "kj6k2iqu2r",
+                  "alignment": "LEFT",
+                  "canExtend": false,
+                  "isLoading": false,
+                  "isVisible": true,
+                  "widgetName": "Canvas13",
+                  "gridColumns": 48,
+                  "distribution": "TOP",
+                  "detachFromLayout": true,
+                  "collapseWhenHidden": true,
+                  "dynamicBindingPathList": [],
+                  "dynamicTriggerPathList": []
+                },
                 {
                   "top": {
                     "mode": "gridUnit",
@@ -1480,10 +1615,10 @@
                         }
                       ],
                       "default_enableCloudFiles": true,
-                      "default_enableGoogleMeet": true,
+                      "default_enableGoogleMeet": false,
                       "default_enableAttachments": true,
-                      "default_enableZoomMeetings": true,
-                      "default_enableMicrosoftTeams": true
+                      "default_enableZoomMeetings": false,
+                      "default_enableMicrosoftTeams": false
                     }
                   ],
                   "parentId": "dfq2m87x9d",
@@ -1814,7 +1949,7 @@
               "widgetId": "dfq2m87x9d",
               "isLoading": false,
               "isVisible": true,
-              "defaultTab": "{{ Global.URL.queryParams.tab || \"Feed\" }}",
+              "defaultTab": "{{ Global.URL.queryParams.tab || \"Copilot\" }}",
               "widgetName": "Tabs1",
               "gridColumns": 48,
               "headerProps": {
@@ -2224,7 +2359,7 @@
   "onPageLoad": [
     {
       "id": "798253bu8o",
-      "code": "/* Set selected row and tab from URL */\nTable1.set(\"selectedRowIndex\", Global.URL.queryParams.user || 0);\nTabs1.set(\"selectedTab\",Global.URL.queryParams.tab || \"Feed\");",
+      "code": "/* Set selected row and tab from URL */\nTable1.set(\"selectedRowIndex\", Global.URL.queryParams.user || 0);\nTabs1.set(\"selectedTab\",Global.URL.queryParams.tab || \"Copilot\");",
       "type": "runJs"
     },
     {

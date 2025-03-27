@@ -42,6 +42,7 @@ export const useSetWeavyNavigationCallback = (
           });
         });
       }
+      return weavyComponent
     },
     [onSetWeavyNavigation, ...deps]
   );

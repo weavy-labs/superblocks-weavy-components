@@ -38,19 +38,19 @@ export default {
       },
     },
     {
-      path: "enableComments",
+      path: "enableCloudFiles",
       dataType: "boolean",
       propertiesPanelDisplay: {
-        label: "Comments",
+        label: "Cloud Files",
         controlType: "switch",
         defaultValue: true,
       },
     },
     {
-      path: "enableCloudFiles",
+      path: "enableComments",
       dataType: "boolean",
       propertiesPanelDisplay: {
-        label: "Cloud Files",
+        label: "Comments",
         controlType: "switch",
         defaultValue: true,
       },
@@ -70,7 +70,7 @@ export default {
       propertiesPanelDisplay: {
         label: "Google Meet",
         controlType: "switch",
-        defaultValue: true,
+        defaultValue: false,
       },
     },
     {
@@ -79,7 +79,7 @@ export default {
       propertiesPanelDisplay: {
         label: "Microsoft Teams",
         controlType: "switch",
-        defaultValue: true,
+        defaultValue: false,
       },
     },
     {
@@ -88,7 +88,7 @@ export default {
       propertiesPanelDisplay: {
         label: "Zoom Meetings",
         controlType: "switch",
-        defaultValue: true,
+        defaultValue: false,
       },
     },
     {

@@ -7,24 +7,27 @@
 // These are the properties which are surfaced in the Superblocks properties panel
 // and can be referenced throughout your Superblocks Application
 export type Props = {
+  bot: string | null;
+  instructions: string | null;
+  contextData: string | null;
+  suggestions: any;
+  enableNewButton: boolean;
   uid: string | null;
+  enableAutoUid: boolean;
   name: string | null;
-  enableAttachments: boolean;
-  enableCloudFiles: boolean;
   enableEmbeds: boolean;
-  enableGoogleMeet: boolean;
-  enableMicrosoftTeams: boolean;
-  enableZoomMeetings: boolean;
   enableMentions: boolean;
-  enablePolls: boolean;
   enablePreviews: boolean;
   enableReactions: boolean;
+  enableTyping: boolean;
   enableNotifications: boolean;
   forceDarkMode: boolean;
   theme: any;
   weavyUrl: string | null;
   accessToken: string | null;
   weavyOptions: any;
+  appId: number | null;
+  lastMessage: any;
 };
 
 export type EventTriggers = {
@@ -32,4 +35,6 @@ export type EventTriggers = {
   // These events can be wired up to event handlers in your Superblocks App
   onSetWeavyNavigation: () => void;
   onTokenExpired: () => void;
+  onApp: () => void;
+  onMessage: () => void;
 };

@@ -1,6 +1,6 @@
 import { useSuperblocksContext } from "@superblocksteam/custom-components";
 import { type Props, type EventTriggers } from "./types";
-import { useWeavy, WyMessenger } from "@weavy/uikit-react";
+import { Feature, useWeavy, WyMessenger } from "@weavy/uikit-react";
 
 export default function WeavyMessenger({
   name,
@@ -44,27 +44,28 @@ export default function WeavyMessenger({
     ...weavyOptions,
   }, [accessToken]);
 
-  const featureProps = {
-    noAttachments: props.enableAttachments === false,
-    noCloudFiles: props.enableCloudFiles === false,
-    noGoogleMeet: props.enableGoogleMeet === false,
-    noMicrosoftTeams: props.enableMicrosoftTeams === false,
-    noZoomMeetings: props.enableZoomMeetings === false,
-    noMentions: props.enableMentions === false,
-    noPolls: props.enablePolls === false,
-    noPreviews: props.enablePreviews === false,
-    noReactions: props.enableReactions === false,
-    noReceipts: props.enableReceipts === false,
-    noTyping: props.enableTyping === false,
-  };
+  const features = [
+    props.enableAttachments && Feature.Attachments,
+    props.enableCloudFiles && Feature.CloudFiles,
+    props.enableEmbeds && Feature.Embeds,
+    props.enableGoogleMeet && Feature.GoogleMeet,
+    props.enableMicrosoftTeams && Feature.MicrosoftTeams,
+    props.enableZoomMeetings && Feature.ZoomMeetings,
+    props.enableMentions && Feature.Mentions,
+    props.enablePolls && Feature.Polls,
+    props.enablePreviews && Feature.Previews,
+    props.enableReactions && Feature.Reactions,
+    props.enableReceipts && Feature.Receipts,
+    props.enableTyping && Feature.Typing,
+  ].filter((f) => f).join(" ");
 
   return (
     <WyMessenger
       bot={bot || undefined}
       style={weavyContainerStyle}
       className={modeClassName}
-      name={name}
-      {...featureProps}
+      name={name || undefined}
+      features={features}
     />
   );
 }

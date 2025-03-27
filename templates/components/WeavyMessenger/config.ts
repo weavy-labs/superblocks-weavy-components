@@ -45,6 +45,15 @@ export default {
       },
     },
     {
+      path: "enableEmbeds",
+      dataType: "boolean",
+      propertiesPanelDisplay: {
+        label: "Embeds",
+        controlType: "switch",
+        defaultValue: true,
+      },
+    },
+    {
       path: "enableGoogleMeet",
       dataType: "boolean",
       propertiesPanelDisplay: {

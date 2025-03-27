@@ -11,7 +11,7 @@
                 {
                   "name": "UpsertUser",
                   "step": {
-                    "integration": "1bbbad61-f66b-4cf1-9263-429eedd8c86e",
+                    "integration": "69ba3787-48b4-4f75-afa0-e85b3fbb8590",
                     "restapiintegration": {
                       "body": "{\n  \"email\" : \"{{ body.user.email }}\",\n  \"name\" : \"{{ body.user.name }}\"\n}",
                       "params": [],
@@ -33,7 +33,7 @@
                 {
                   "name": "GetWeavyAccessToken",
                   "step": {
-                    "integration": "1bbbad61-f66b-4cf1-9263-429eedd8c86e",
+                    "integration": "69ba3787-48b4-4f75-afa0-e85b3fbb8590",
                     "restapiintegration": {
                       "params": [],
                       "headers": [],
