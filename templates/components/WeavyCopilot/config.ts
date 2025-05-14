@@ -8,12 +8,14 @@ export default {
   componentPath: "components/WeavyCopilot/component.tsx",
   properties: [
     {
-      path: "bot",
+      path: "agent",
       dataType: "string",
       propertiesPanelDisplay: {
-        label: "Bot name",
+        label: "Agent name",
         controlType: "text",
-        placeholder: "Bot uid"
+        placeholder: "Agent uid",
+        defaultValue: "assistant",
+        exampleData: "assistant"
       },
     },
     {

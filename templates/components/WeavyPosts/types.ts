@@ -9,6 +9,7 @@
 export type Props = {
   uid: string | null;
   name: string | null;
+  contextData: string | null;
   enableAttachments: boolean;
   enableCloudFiles: boolean;
   enableComments: boolean;

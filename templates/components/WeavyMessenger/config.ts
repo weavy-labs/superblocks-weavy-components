@@ -18,12 +18,23 @@ export default {
       },
     },
     {
-      path: "bot",
+      path: "agent",
       dataType: "string",
       propertiesPanelDisplay: {
-        label: "Bot mode",
+        label: "Agent mode",
         controlType: "text",
-        placeholder: "Optional bot uid"
+        placeholder: "Optional agent uid",
+        exampleData: "assistant"
+      },
+    },
+    {
+      path: "contextData",
+      dataType: "string",
+      description: "Any content or context data for the agent to work with.",
+      propertiesPanelDisplay: {
+        label: "Context data",
+        controlType: "text",
+        placeholder: "Provide some structured data"
       },
     },
     {

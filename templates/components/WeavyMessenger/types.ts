@@ -8,7 +8,8 @@
 // and can be referenced throughout your Superblocks Application
 export type Props = {
   name: string | null;
-  bot: string | null;
+  agent: string | null;
+  contextData: string | null;
   enableAttachments: boolean;
   enableCloudFiles: boolean;
   enableEmbeds: boolean;

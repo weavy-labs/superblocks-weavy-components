@@ -11,6 +11,7 @@ import { useHooksInternalContext } from "@superblocksteam/custom-components/dist
 export default function WeavyChat({
   uid,
   name,
+  contextData,
   weavyUrl,
   accessToken,
   weavyOptions = {},
@@ -73,6 +74,7 @@ export default function WeavyChat({
   const features = [
     props.enableAttachments && Feature.Attachments,
     props.enableCloudFiles && Feature.CloudFiles,
+    Feature.ContextData,
     props.enableEmbeds && Feature.Embeds,
     props.enableGoogleMeet && Feature.GoogleMeet,
     props.enableMicrosoftTeams && Feature.MicrosoftTeams,
@@ -105,6 +107,7 @@ export default function WeavyChat({
       className={modeClassName}
       uid={uid}
       name={name || undefined}
+      data={contextData ? [contextData] : undefined}
       features={features}
       {...notificationProps}
     />

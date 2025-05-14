@@ -4,7 +4,8 @@ import { Feature, useWeavy, WyMessenger } from "@weavy/uikit-react";
 
 export default function WeavyMessenger({
   name,
-  bot,
+  agent,
+  contextData,
   weavyUrl,
   accessToken,
   weavyOptions = {},
@@ -47,6 +48,7 @@ export default function WeavyMessenger({
   const features = [
     props.enableAttachments && Feature.Attachments,
     props.enableCloudFiles && Feature.CloudFiles,
+    Feature.ContextData,
     props.enableEmbeds && Feature.Embeds,
     props.enableGoogleMeet && Feature.GoogleMeet,
     props.enableMicrosoftTeams && Feature.MicrosoftTeams,
@@ -61,7 +63,8 @@ export default function WeavyMessenger({
 
   return (
     <WyMessenger
-      bot={bot || undefined}
+      agent={agent || undefined}
+      data={contextData ? [contextData] : undefined}
       style={weavyContainerStyle}
       className={modeClassName}
       name={name || undefined}

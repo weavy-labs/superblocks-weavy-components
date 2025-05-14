@@ -7,7 +7,7 @@
 // These are the properties which are surfaced in the Superblocks properties panel
 // and can be referenced throughout your Superblocks Application
 export type Props = {
-  bot: string | null;
+  agent: string | null;
   instructions: string | null;
   contextData: string | null;
   suggestions: any;

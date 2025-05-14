@@ -11,6 +11,7 @@ import { useHooksInternalContext } from "@superblocksteam/custom-components/dist
 export default function WeavyPosts({
   uid,
   name,
+  contextData,
   weavyUrl,
   accessToken,
   weavyOptions = {},
@@ -74,6 +75,7 @@ export default function WeavyPosts({
     props.enableAttachments && Feature.Attachments,
     props.enableCloudFiles && Feature.CloudFiles,
     props.enableComments && Feature.Comments,
+    Feature.ContextData,
     props.enableEmbeds && Feature.Embeds,
     props.enableGoogleMeet && Feature.GoogleMeet,
     props.enableMicrosoftTeams && Feature.MicrosoftTeams,
@@ -108,6 +110,7 @@ export default function WeavyPosts({
           className={modeClassName}
           uid={uid}
           name={name || undefined}
+          data={contextData ? [contextData] : undefined}
           features={features}
           {...notificationProps}
         />

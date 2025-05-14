@@ -15,7 +15,7 @@ import { ComponentProps, useRef } from "react";
 const { WyButton, WyIcon } = WeavyComponents;
 
 export default function WeavyCopilot({
-  bot,
+  agent,
   instructions,
   contextData,
   suggestions,
@@ -108,7 +108,7 @@ export default function WeavyCopilot({
       }}
       style={weavyContainerStyle}
       className={modeClassName}
-      bot={bot || undefined}
+      agent={agent || undefined}
       instructions={instructions || undefined}
       data={contextData ? [contextData] : undefined}
       uid={!enableAutoUid ? uid : undefined}

@@ -1394,7 +1394,7 @@
                       "isLoading": false,
                       "isVisible": true,
                       "widgetName": "WeavyCopilot1",
-                      "default_bot": "assistant",
+                      "default_agent": "assistant",
                       "gridColumns": 50,
                       "default_theme": "{{theme}}",
                       "default_weavyUrl": "{{App.WEAVY_URL.value}}",

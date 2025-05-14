@@ -29,6 +29,16 @@ export default {
       },
     },
     {
+      path: "contextData",
+      dataType: "string",
+      description: "Any content or context data for the agent to work with.",
+      propertiesPanelDisplay: {
+        label: "Context data",
+        controlType: "text",
+        placeholder: "Provide some structured data"
+      },
+    },
+    {
       path: "enableAttachments",
       dataType: "boolean",
       propertiesPanelDisplay: {
