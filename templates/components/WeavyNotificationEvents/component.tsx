@@ -35,9 +35,9 @@ export default function Component({
       theme?.borderRadius.value + theme?.borderRadius.mode,
     ["--wy-theme-color"]: theme?.colors.primary500,
     ["--wy-padding"]:
-      theme && theme.padding.bottom.value / 2 + theme.padding.bottom.mode,
+      theme && theme.padding.left.value / 2 + theme.padding.left.mode,
     ["--wy-gap"]:
-      theme && theme.padding.bottom.value / 2 + theme.padding.bottom.mode,
+      theme && theme.padding.left.value / 2 + theme.padding.left.mode,
   };
 
   const modeClassName =

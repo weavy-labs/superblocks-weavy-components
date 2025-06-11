@@ -8,16 +8,6 @@ export default {
   componentPath: "components/WeavyMessenger/component.tsx",
   properties: [
     {
-      path: "name",
-      dataType: "string",
-      description: "The display name of the component. Used in title.",
-      propertiesPanelDisplay: {
-        label: "Display name",
-        controlType: "text",
-        exampleData: "My messenger",
-      },
-    },
-    {
       path: "agent",
       dataType: "string",
       propertiesPanelDisplay: {

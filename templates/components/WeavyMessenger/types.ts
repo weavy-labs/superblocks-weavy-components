@@ -7,7 +7,6 @@
 // These are the properties which are surfaced in the Superblocks properties panel
 // and can be referenced throughout your Superblocks Application
 export type Props = {
-  name: string | null;
   agent: string | null;
   contextData: string | null;
   enableAttachments: boolean;

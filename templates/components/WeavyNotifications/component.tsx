@@ -21,8 +21,8 @@ export default function WeavyNotifications({
     ["--wy-border-radius"]:
       theme?.borderRadius.value + theme?.borderRadius.mode,
     ["--wy-theme-color"]: theme?.colors.primary500,
-    ["--wy-padding"]: theme && (theme.padding.bottom.value/2 + theme.padding.bottom.mode),
-    ["--wy-gap"]: theme && (theme.padding.bottom.value/2 + theme.padding.bottom.mode),
+    ["--wy-padding"]: theme && (theme.padding.left.value/2 + theme.padding.left.mode),
+    ["--wy-gap"]: theme && (theme.padding.left.value/2 + theme.padding.left.mode),
   };
 
   const modeClassName = forceDarkMode || theme?.mode === "DARK" ? "wy-dark" : "";
