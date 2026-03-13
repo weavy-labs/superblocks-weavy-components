@@ -3,12 +3,12 @@ import {
   useSuperblocksIsLoading,
 } from "@superblocksteam/custom-components";
 import { type Props, type EventTriggers } from "./types";
-import { Feature, useWeavy, WyPosts } from "@weavy/uikit-react";
+import { Feature, useWeavy, WyFeed } from "@weavy/uikit-react";
 import { useSetWeavyNavigationCallback } from "../WeavyNotificationEvents/notifications";
 import { ComponentProps, useEffect } from "react";
 import { useHooksInternalContext } from "@superblocksteam/custom-components/dist/hooksPlumbing";
 
-export default function WeavyPosts({
+export default function WeavyFeed({
   uid,
   name,
   contextData,
@@ -72,18 +72,19 @@ export default function WeavyPosts({
   }, [isLoading]);
 
   const features = [
-    props.enableAttachments && Feature.Attachments,
-    props.enableCloudFiles && Feature.CloudFiles,
-    props.enableComments && Feature.Comments,
+    (props.enableAttachments ? "" : "-") + Feature.Attachments,
+    (props.enableCloudFiles ? "" : "-") + Feature.CloudFiles,
+    (props.enableComments ? "" : "-") + Feature.Comments,
     Feature.ContextData,
-    props.enableEmbeds && Feature.Embeds,
-    props.enableGoogleMeet && Feature.GoogleMeet,
-    props.enableMicrosoftTeams && Feature.MicrosoftTeams,
-    props.enableZoomMeetings && Feature.ZoomMeetings,
-    props.enableMentions && Feature.Mentions,
-    props.enablePolls && Feature.Polls,
-    props.enablePreviews && Feature.Previews,
-    props.enableReactions && Feature.Reactions,
+    (props.enableEmbeds ? "" : "-") + Feature.Embeds,
+    (props.enableFollow ? "" : "-") + Feature.Follow,
+    (props.enableGoogleMeet ? "" : "-") + Feature.GoogleMeet,
+    (props.enableMicrosoftTeams ? "" : "-") + Feature.MicrosoftTeams,
+    (props.enableZoomMeetings ? "" : "-") + Feature.ZoomMeetings,
+    (props.enableMentions ? "" : "-") + Feature.Mentions,
+    (props.enablePolls ? "" : "-") + Feature.Polls,
+    (props.enablePreviews ? "" : "-") + Feature.Previews,
+    (props.enableReactions ? "" : "-") + Feature.Reactions,
   ]
     .filter((f) => f)
     .join(" ");
@@ -91,7 +92,7 @@ export default function WeavyPosts({
   const notificationProps = {
     notifications: (enableNotifications
       ? "button-list"
-      : "none") as ComponentProps<typeof WyPosts>["notifications"],
+      : "none") as ComponentProps<typeof WyFeed>["notifications"],
   };
 
   const { navigationRefCallBack } = useSetWeavyNavigationCallback(
@@ -104,7 +105,7 @@ export default function WeavyPosts({
       {!isLoading && !uid ? (
         <div>Set the UID</div>
       ) : (
-        <WyPosts
+        <WyFeed
           ref={uid ? navigationRefCallBack : undefined}
           style={weavyContainerStyle}
           className={modeClassName}

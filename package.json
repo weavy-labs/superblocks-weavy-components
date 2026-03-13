@@ -1,6 +1,6 @@
 {
   "name": "superblocks-weavy-example",
-  "version": "30.4.1",
+  "version": "31.0.0",
   "private": true,
   "type": "module",
   "scripts": {

@@ -66,20 +66,21 @@ export default function WeavyFiles({
   }, [isLoading]);
 
   const features = [
-    props.enableAttachments && Feature.Attachments,
-    props.enableCloudFiles && Feature.CloudFiles,
-    props.enableComments && Feature.Comments,
+    (props.enableAttachments ? "" : "-") + Feature.Attachments,
+    (props.enableCloudFiles ? "" : "-") + Feature.CloudFiles,
+    (props.enableComments ? "" : "-") + Feature.Comments,
     Feature.ContextData,
-    props.enableEmbeds && Feature.Embeds,
-    props.enableGoogleMeet && Feature.GoogleMeet,
-    props.enableMicrosoftTeams && Feature.MicrosoftTeams,
-    props.enableZoomMeetings && Feature.ZoomMeetings,
-    props.enableMentions && Feature.Mentions,
-    props.enablePolls && Feature.Polls,
-    props.enablePreviews && Feature.Previews,
-    props.enableReactions && Feature.Reactions,
-    props.enableVersions && Feature.Versions,
-    props.enableWebDAV && Feature.WebDAV,
+    (props.enableEmbeds ? "" : "-") + Feature.Embeds,
+    (props.enableFollow ? "" : "-") + Feature.Follow,
+    (props.enableGoogleMeet ? "" : "-") + Feature.GoogleMeet,
+    (props.enableMicrosoftTeams ? "" : "-") + Feature.MicrosoftTeams,
+    (props.enableZoomMeetings ? "" : "-") + Feature.ZoomMeetings,
+    (props.enableMentions ? "" : "-") + Feature.Mentions,
+    (props.enablePolls ? "" : "-") + Feature.Polls,
+    (props.enablePreviews ? "" : "-") + Feature.Previews,
+    (props.enableReactions ? "" : "-") + Feature.Reactions,
+    (props.enableVersions ? "" : "-") + Feature.Versions,
+    (props.enableWebDAV ? "" : "-") + Feature.WebDAV,
   ].filter((f) => f).join(" ");
 
   const notificationProps = {

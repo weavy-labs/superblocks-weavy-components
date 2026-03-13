@@ -75,6 +75,15 @@ export default {
       },
     },
     {
+      path: "enableFollow",
+      dataType: "boolean",
+      propertiesPanelDisplay: {
+        label: "Follow",
+        controlType: "switch",
+        defaultValue: true,
+      },
+    },
+    {
       path: "enableGoogleMeet",
       dataType: "boolean",
       propertiesPanelDisplay: {

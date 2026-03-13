@@ -1535,8 +1535,8 @@
                       "widgetId": "5v0gowuxw5",
                       "isLoading": false,
                       "isVisible": true,
-                      "widgetName": "WeavyPosts1",
-                      "default_uid": "superblocks:users-posts-{{ Table1.selectedRowIndex }}",
+                      "widgetName": "WeavyFeed1",
+                      "default_uid": "superblocks:users-feed-{{ Table1.selectedRowIndex }}",
                       "gridColumns": 48,
                       "default_name": "{{Table1.selectedRow.name}} Feed",
                       "default_theme": "{{theme}}",
@@ -1573,7 +1573,7 @@
                           },
                           "queryParams": "",
                           "eventPayload": {
-                            "d74c85ef-f1ed-45dc-9453-f429589e4281": "{{WeavyPosts1.uid}}"
+                            "d74c85ef-f1ed-45dc-9453-f429589e4281": "{{WeavyFeed1.uid}}"
                           }
                         }
                       ],

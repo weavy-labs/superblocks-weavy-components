@@ -13,6 +13,7 @@ export type Props = {
   enableAttachments: boolean;
   enableCloudFiles: boolean;
   enableEmbeds: boolean;
+  enableFollow: boolean;
   enableGoogleMeet: boolean;
   enableMicrosoftTeams: boolean;
   enableZoomMeetings: boolean;

@@ -45,19 +45,20 @@ export default function WeavyMessenger({
   }, [accessToken]);
 
   const features = [
-    props.enableAttachments && Feature.Attachments,
-    props.enableCloudFiles && Feature.CloudFiles,
+    (props.enableAttachments ? "" : "-") + Feature.Attachments,
+    (props.enableCloudFiles ? "" : "-") + Feature.CloudFiles,
     Feature.ContextData,
-    props.enableEmbeds && Feature.Embeds,
-    props.enableGoogleMeet && Feature.GoogleMeet,
-    props.enableMicrosoftTeams && Feature.MicrosoftTeams,
-    props.enableZoomMeetings && Feature.ZoomMeetings,
-    props.enableMentions && Feature.Mentions,
-    props.enablePolls && Feature.Polls,
-    props.enablePreviews && Feature.Previews,
-    props.enableReactions && Feature.Reactions,
-    props.enableReceipts && Feature.Receipts,
-    props.enableTyping && Feature.Typing,
+    (props.enableEmbeds ? "" : "-") + Feature.Embeds,
+    (props.enableFollow ? "" : "-") + Feature.Follow,
+    (props.enableGoogleMeet ? "" : "-") + Feature.GoogleMeet,
+    (props.enableMicrosoftTeams ? "" : "-") + Feature.MicrosoftTeams,
+    (props.enableZoomMeetings ? "" : "-") + Feature.ZoomMeetings,
+    (props.enableMentions ? "" : "-") + Feature.Mentions,
+    (props.enablePolls ? "" : "-") + Feature.Polls,
+    (props.enablePreviews ? "" : "-") + Feature.Previews,
+    (props.enableReactions ? "" : "-") + Feature.Reactions,
+    (props.enableReceipts ? "" : "-") + Feature.Receipts,
+    (props.enableTyping ? "" : "-") + Feature.Typing,
   ].filter((f) => f).join(" ");
 
   return (
